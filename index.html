@@ -1,8 +1,9 @@
 <!doctype html>
 <title>Insurance United</title>
+<link href=insuranceunited.css rel=stylesheet>
 
 <header>Insurance United
-  <button>Sign out</button></header>
+  <a href="#sign-out">Sign out</a></header>
 
 <section id=authenticate>
   <h1>Welcome to Insurance United</h1>
@@ -10,7 +11,7 @@
     <a href="#sign-in">Sign in</a> or 
     <a href="#create-a-new-account">create a new account</a>.
   
-  <form id=sign-in>
+  <form id=sign_in>
     <fieldset>
       <legend>Sign in</legend>
       <label>Email Address
@@ -18,25 +19,27 @@
       <label>Password
         <input name=password type=password></label>
         
-      <a href="forgot-password">Forgot password?</a>
       <button>Sign In</button>
+      <a href="forgot-password">Forgot?</a>
     </fieldset>
   </form>
   
-  <form id=create-a-new-account>
+  <form id=register>
     <fieldset>
       <legend>Create New Account</legend>
       <label>Email Address
         <input name=email type=email></label>
       <label>Password
-        <input name=password type=password></label>
+        <input name=password type=password data-typetoggle='#showpw'></label>
+      <label>
+        <input id=showpw type=checkbox>Show password</label>
         
       <button>Create Account</button>
     </fieldset>
   </form>
 </section>
 
-<form id=about-your-family>
+<form id=members>
   <h1>You and Your Family</h1>
   <p>Please provide information about you and the family members to be insured.
   <fieldset>
@@ -52,17 +55,23 @@
     <label>Social Security Number
       <input name=ssn placeholder="XXX-XX-XXXX" pattern="\d{3}-?\d{2}-?\d{4}"></label>
     <label>Relationship
-      <select>
+      <select name=relationship>
+        <option value=self selected>Self
         <option value=spouse>Spouse
         <option value=child>Child
         <option value=parent>Parent
       </select></label>
+      
+    <label>Smoker <input type=checkbox></label>
+    <label>Pregnant <input type=checkbox></label>
+    <label>Disabled <input type=checkbox></label>
   </fieldset>
-  <button type=button>Add Member</button>
+  
+  <button type=button>Add Another Member</button>
   <button>Continue</button>
 </form>
 
-<form id=about-your-household>
+<form id=household>
   <h1>Your Household</h1>
   <p>Please provide information about your household.
   <fieldset>
@@ -87,27 +96,14 @@
       <input name=income_source></label>
     <label>Income Amount
       $<input name=income_amount> per 
-      <select>
+      <select name=income_period>
         <option value=year>Year
         <option value=month>Month
       </select></label>
   </fieldset>
-  
-  <fieldset>
-    <legend>Household Health</legend>
-    <table>
-      <thead>
-        <th> <th>Smoker <th>Pregnant <th>Disabled
-      <tbody>
-        <td>You &mdash; John Smith
-        <td><input type=checkbox>
-        <td><input type=checkbox>
-        <td><input type=checkbox>
-    </table>
-  </fieldset>
 </form>
 
-<form id=plan-selection>
+<form id=enroll>
   <p>Based on the information provided, we found the following plans for you.<br>
     Please review the plans and make your selection
   <table>
@@ -125,11 +121,11 @@
     You will be notified at <span>your email address on file</span> when it has been processed.<br>
     Your reference number is 2340897234.</p>
     
-  <a href="#authenticate">Exit</a> 
+  <a href="#sign-out">Exit</a> 
 </section>
 
 <footer>&copy; 2012 Insurance United. All rights reserved.</footer>
 
-<script src="js/jquery-gnius.js"></script>
-<script>
-</script>
+<script src="js/lib.js"></script>
+<script src="http://cdn.openkeyval.org/statics/openkeyval.packed.js"></script>
+<script src="js/insuranceunited.js"></script>
