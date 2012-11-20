@@ -1,43 +1,21 @@
 <!doctype html>
-<title>Insurance United</title>
+<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+<script>_=+new Date</script>
+
+<link href="http://fonts.googleapis.com/css?family=Montserrat+Alternates" rel=stylesheet>
 <link href=insuranceunited.css rel=stylesheet>
 
-<header>Insurance United
+<title>Insurance United</title>
+
+<header><h1>Insurance United</h1>
   <a href="#sign-out">Sign out</a></header>
 
-<section id=authenticate>
-  <h1>Welcome to Insurance United</h1>
-  <p>To get started,  
-    <a href="#sign-in">Sign in</a> or 
-    <a href="#create-a-new-account">create a new account</a>.
-  
-  <form id=sign_in>
-    <fieldset>
-      <legend>Sign in</legend>
-      <label>Email Address
-        <input name=email type=email></label>
-      <label>Password
-        <input name=password type=password></label>
-        
-      <button>Sign In</button>
-      <a href="forgot-password">Forgot?</a>
-    </fieldset>
-  </form>
-  
-  <form id=register>
-    <fieldset>
-      <legend>Create New Account</legend>
-      <label>Email Address
-        <input name=email type=email></label>
-      <label>Password
-        <input name=password type=password data-typetoggle='#showpw'></label>
-      <label>
-        <input id=showpw type=checkbox>Show password</label>
-        
-      <button>Create Account</button>
-    </fieldset>
-  </form>
-</section>
+<form id=authenticate>
+  <input name=email type=email placeholder=email><br>
+  <input name=password type=password data-typetoggle=#showpw placeholder=password><br>
+  <label><input id=showpw type=checkbox> Show Password</label><br>
+  <button>Continue</button>
+</form>
 
 <form id=members>
   <h1>You and Your Family</h1>
@@ -45,15 +23,15 @@
   <fieldset>
     <legend>You</legend>
     <label>Name
-      <input name=first_name placeholder=First>
-      <input name=last_name placeholder=Last></label>
+      <input name=first_name placeholder=First required>
+      <input name=last_name placeholder=Last required></label>
     <label>Date of Birth
-      <input name=date_of_birth type=date placeholder="MM/DD/YYYY"></label>
+      <input name=date_of_birth type=date placeholder="MM/DD/YYYY" required></label>
     <label>Gender
-      <input name=gender type=radio value=Male>
-      <input name=gender type=radio value=Female></label>
+      <input name=gender type=radio value=Male required> Male
+      <input name=gender type=radio value=Female required> Female </label>
     <label>Social Security Number
-      <input name=ssn placeholder="XXX-XX-XXXX" pattern="\d{3}-?\d{2}-?\d{4}"></label>
+      <input name=ssn placeholder="XXX-XX-XXXX" pattern="\d{3}-?\d{2}-?\d{4}" required></label>
     <label>Relationship
       <select name=relationship>
         <option value=self selected>Self
@@ -67,7 +45,7 @@
     <label>Disabled <input type=checkbox></label>
   </fieldset>
   
-  <button type=button>Add Another Member</button>
+  <button type=button id=add_member>Add Another Member</button>
   <button>Continue</button>
 </form>
 
@@ -77,12 +55,12 @@
   <fieldset>
     <legend>Residence Address</legend>
     <label>Street Address
-      <input name=address>
+      <input name=address required>
       <input name=address2></label>
     <label>City
-      <input name=city></label>
+      <input name=city required></label>
     <label>Zip Code
-      <input name=zipcode pattern="\d{5}"</label>
+      <input name=zipcode pattern="\d{5}" required</label>
   </fieldset>
   
   <fieldset>
@@ -93,14 +71,15 @@
   <fieldset>
     <legend>Total Household Income</legend>
     <label>Income Source
-      <input name=income_source></label>
+      <input name=income_source required></label>
     <label>Income Amount
-      $<input name=income_amount> per 
+      $<input name=income_amount type=number required> per 
       <select name=income_period>
         <option value=year>Year
         <option value=month>Month
       </select></label>
   </fieldset>
+  <button>Continue</button>
 </form>
 
 <form id=enroll>
@@ -108,11 +87,12 @@
     Please review the plans and make your selection
   <table>
     <thead>
-      <th>Plan Name <th>Rating <th>Plan Costs <th>
+      <th>Plan <th>Rating <th>Plan Costs
     <tbody>
-      <td>ACME <td>A B <td> $50 <td> <button>Enroll</button>
+      <td><input type=radio name=plan>ACME <td>A B <td> $50
         
   </table>
+  <button>Enroll</button>
 </form>
 
 <section id=confirm>
@@ -129,3 +109,4 @@
 <script src="js/lib.js"></script>
 <script src="http://cdn.openkeyval.org/statics/openkeyval.packed.js"></script>
 <script src="js/insuranceunited.js"></script>
+<script src="js/plans.insuranceunited.js"></script>
