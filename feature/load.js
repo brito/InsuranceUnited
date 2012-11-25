@@ -33,4 +33,4 @@ $('script:last')
   .siblings()
     .addClass('loading')
   .after($('<style>').html("#loading~*{display:none} #loading~.loading{display:block}"));
-    
+window['assert']=(console&&console.assert)||Function;
