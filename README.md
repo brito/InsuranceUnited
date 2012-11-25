@@ -5,7 +5,7 @@ A proof of concept for prototyping for a fictional entity.
 
 *([demo]{http://darkgoyle.com/demos/iu})*
 
-It all starts with Meaning
+It all starts with meaning
 --------------------------
 
 [semantics]{http://darkgoyle.com/demos/iu/source/html/0}
@@ -25,9 +25,16 @@ Now you try
 
 How-To
 ------
-REST-JSON database web service ([db.phiveleven.com]{})
+[REST-JSON database web service]{http://nullisnull.blogspot.com/}
 
+Changelog
+---------
+* setup database xhr API on darkgoyle.com
 
 To do:
 -----
+* HTML
+* CSS
+
+    
 

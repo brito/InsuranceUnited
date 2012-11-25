@@ -1,3 +1,10 @@
 *{padding:0;margin:0}
+body { text-align:center }
 
-h1 { font:100%/1 'Montserrat Alternates',sans-serif }
+.loading:after { content:'loading\2026'; display:block }
+  
+@keyframes fade-zoom-in {
+	from { transform:scale(5); opacity:0 }
+	to { transform:scale(1); opacity:1 }
+}
+.welcome { animation:fade-zoom-in 1s cubic-bezier(.8,.75,.32,1)  }
