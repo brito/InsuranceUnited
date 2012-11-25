@@ -32,5 +32,5 @@ $('script:last')
     .addClass('welcome')
   .siblings()
     .addClass('loading')
-  .after($('<style>').html("#loading~*{display:none} #loading~.loading{display:block}"));
+  .after($('<style>').html("#loading~*,[class^=when-]{display:none} #loading~.loading{display:block}"));
 window['assert']=(console&&console.assert)||Function;
