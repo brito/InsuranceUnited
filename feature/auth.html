@@ -4,3 +4,48 @@
   <label class=when-recognized><input id=showpw type=checkbox> Show Password</label><br>
   <button class=when-recognized>Continue</button>
 </form>
+
+<script>
+// validate inputs, store data to closest([data]), trigger events
+$.fn.inform = function(){
+  this.filter('form').each(function(){
+    $(this).on('submit', function(){
+      
+      return false;
+    });
+  });
+};
+
+$('#auth')
+  // peripherals
+  .on('keyup', '[name=email]', function(){
+    var input = this;
+    // debounce
+    clearTimeout($(input).data('debounce'));
+    $(input).data('debounce', setTimeout(function(){
+      var rules = { is_email: /^[^@]+@.+\.[^.]{2,}$/ };
+      for (var rule in rules) (function(matches){
+        $(input).trigger('set', [rule, matches]);
+      })(input.value.match(rules[rule]));
+    }, 300));
+  })
+  // actions
+  .on({ 
+    'set': function(e, rule, matches){
+      if (!matches) return;
+      
+	    if ('is_email' == rule)
+	      $(e.target)
+	        .closest('[data]')
+	          .data('email', matches[0])
+	          .trigger('change');
+	  },
+	  'load': function(){},
+	  'change': function(){}})
+  .show()
+  .trigger('load');
+
+// Stop password maskingâ Jacob Nielsen
+// http://www.useit.com/alertbox/passwords.html
+//$('[name=password]').showPassword();
+</script>

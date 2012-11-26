@@ -4,7 +4,7 @@ $('<script>')
 .add($('<link>', { rel:'stylesheet', href: 'http://code.jquery.com/qunit/qunit-1.10.0.css'})).appendTo('head');
 // create qunit container
 $($('<section>', { id: 'qunit' }))
-  .insertAfter('script:last');
+  .insertAfter('script:last').hide();
 $(document)
   .one('keyup',function(e){ if (e.keyCode==27) $('#qunit').show() })
 
