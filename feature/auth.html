@@ -40,12 +40,16 @@ $('#auth')
 	          .data('email', matches[0])
 	          .trigger('change');
 	  },
-	  'load': function(){},
-	  'change': function(){}})
-  .show()
-  .trigger('load');
+	  'call': function(e){
+	    console.debug(e.type, arguments);
+			// Stop password maskingâ Jacob Nielsen
+			// http://www.useit.com/alertbox/passwords.html
+			$('[name=password]').showPassword();
+	  },
+	  'change': function(){},
+	  'init': function(e){
+	    console.info(e.type, arguments);
+	  } })
+  .trigger('init');
 
-// Stop password maskingâ Jacob Nielsen
-// http://www.useit.com/alertbox/passwords.html
-//$('[name=password]').showPassword();
 </script>

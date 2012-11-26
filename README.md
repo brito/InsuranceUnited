@@ -3,7 +3,8 @@ Insurance United
 
 A proof of concept for prototyping for a fictional entity.
 
-*([demo]{http://darkgoyle.com/demos/iu})*
+* [demo](http://brito.github.com/InsuranceUnited/ "Demo on GitHub")
+
 
 It all starts with meaning
 --------------------------
@@ -29,19 +30,22 @@ How-To
 
 Changes
 ---------
-* setup database xhr API on darkgoyle.com
+* setup [database xhr API](http://darkgoyle.com/)
 * added gnius source to debug call to interpolate
-* create typographical logo.html
+* add [typographical logo](logo.html)
+* [tested try/catch cost](http://jsperf.com/the-cost-of-trying) 
 
 To do:
 -----
 * add favicon
   * get favicon from typographic logo
 * add css
-* add js - mock
-* add js - tests
-* add js - api
+* add mock.js
+* add tests.js
+* add api.js
 
-
-    
-
+* add [custom domain]()
+* all [tests]() pass
+* add [presentation slides]()
+* add [presentation video]()
+* add [webex setup]()
