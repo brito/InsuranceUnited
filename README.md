@@ -35,6 +35,7 @@ Changes
 * add [typographical logo](logo.html)
 * [tested try/catch cost](http://jsperf.com/the-cost-of-trying) 
 * add favicon
+* add apple-touch-icon
 
 To do:
 -----
