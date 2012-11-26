@@ -5,6 +5,12 @@ function load(feature){
       selector = feature[3] || 'body';
 
   $.ajax({ url:file, dataType:'text'})
-    .done(function(html){ $(html)[verb](selector) })
+    .done(function(html){
+      console.debug(verb, selector,
+        $(html)
+          .filter(function() { return this.nodeType != Node.TEXT_NODE; })
+          [verb](selector)
+      );
+     })
     .fail(console.error);
 }

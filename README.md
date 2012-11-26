@@ -27,14 +27,21 @@ How-To
 ------
 [REST-JSON database web service]{http://nullisnull.blogspot.com/}
 
-Changelog
+Changes
 ---------
 * setup database xhr API on darkgoyle.com
+* added gnius source to debug call to interpolate
+* create typographical logo.html
 
 To do:
 -----
-* HTML
-* CSS
+* add favicon
+  * get favicon from typographic logo
+* add css
+* add js - mock
+* add js - tests
+* add js - api
+
 
     
 
