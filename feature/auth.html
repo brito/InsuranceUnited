@@ -6,11 +6,17 @@
 </form>
 
 <script>
-// validate inputs, store data to closest([data]), trigger events
-$.fn.inform = function(){
+$.fn.notify = function(name){
+  // setup forms only
   this.filter('form').each(function(){
-    $(this).on('submit', function(){
-      
+    var form = $(this);
+    // switch to xhr submit
+    form.on('submit', function(){
+      form.serialize().split('&').forEach(function(pair){
+        pair.replace(/([^=]+)=(.*)/,function(pair,name,value){
+          $('[name='+name+']').closest('[data]').data(name, value);
+        });
+      });
       return false;
     });
   });
@@ -19,6 +25,7 @@ $.fn.inform = function(){
 $('#auth')
   // peripherals
   .on('keyup', '[name=email]', function(){
+    $(this).notify();
     var input = this;
     // debounce
     clearTimeout($(input).data('debounce'));
@@ -42,6 +49,8 @@ $('#auth')
 	  },
 	  'call': function(e){
 	    console.debug(e.type, arguments);
+	  },
+	  'authenticate': function(){
 			// Stop password maskingâ Jacob Nielsen
 			// http://www.useit.com/alertbox/passwords.html
 			$('[name=password]').showPassword();

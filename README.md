@@ -34,11 +34,10 @@ Changes
 * added gnius source to debug call to interpolate
 * add [typographical logo](logo.html)
 * [tested try/catch cost](http://jsperf.com/the-cost-of-trying) 
+* add favicon
 
 To do:
 -----
-* add favicon
-  * get favicon from typographic logo
 * add css
 * add mock.js
 * add tests.js
