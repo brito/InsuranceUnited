@@ -1,0 +1,27 @@
+%YAML 1.2
+--- !<tag:darkgoyle.com,2012:InsuranceUnited>
+# data schema for a fictitious insurance company
+data:
+  policy:
+    &status status: draft
+    &version version: 0
+    &number number:
+    region:
+      zip:
+      city:
+    &owner owner:
+      name:
+      contact:
+        email:
+        phone:
+        address:
+        postal:
+      birthdate:
+      smoker: false
+      gender:
+      pregnant: false
+      disabled: false
+    insureds:
+      - relationship: self
+        member: *owner
+     

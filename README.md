@@ -61,16 +61,16 @@ Technical details on how the parts are built
 
 Changes
 ---------
-* setup [database xhr API](http://darkgoyle.com/)
+* setup [database xhr API](http://darkgoyle.com/) - need docs
 * added gnius source to debug call to interpolate
-* add [typographical logo](logo.html)
+* add typographical logo
 * [tested try/catch cost](http://jsperf.com/the-cost-of-trying) 
-* add favicon
-* add apple-touch-icon
+* add [favicon](http://brito.github.com/InsuranceUnited/favicon.png)
+* add [apple-touch-icon](http://brito.github.com/InsuranceUnited/favicon.png)
+* add [data schema](http://brito.github.com/InsuranceUnited/planning/schema.yml)
 
 To do:
 -----
-* add data schema
 * add html semantics
 * add css
 * add mock.js
