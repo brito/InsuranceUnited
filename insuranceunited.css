@@ -19,8 +19,14 @@ button { font-size:inherit; color:#333; cursor:pointer;
   background:linear-gradient(rgba(255,255,255,0.4), rgba(0,0,0,0.1)) #ccc }
   button:hover { background-image:linear-gradient(rgba(255,255,255,.7), rgba(0,0,0,.3)) }
   button:active { background-image:linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)) }
-fieldset {}
 label { display:block }
+
+/*
+[data][id] { box-shadow:-0.3ex -1.3ex .3ex rgba(161, 8, 0, 0.33) }
+[data][id]:target { background:rgba(255,255,255,.2);  }
+[data][id]:before { content:attr(id); display:inline-block }
+[data][id]:target:before { color:black }
+*/
 
 h1 { text-shadow:2px 2px 1px rgba(0,0,0,.5) }
 

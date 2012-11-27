@@ -9,9 +9,11 @@ A proof of concept for prototyping for a fictional entity.
 These are not ready yet
 * [presentation](http://rvl.io/brito/InsuranceUnited "Presentation deck")
 * [video](http://youtube.com/darkgoyle/InsuranceUnited "Audio-visual")
+* most of the links below don't work yet
 
 Information Architecture
 --------------------------
+<pre>
 Story:
   Plot: (user flows)
     Scenes: (user flow)
@@ -20,31 +22,37 @@ Story:
       Enroll: enter personal information, create record: register
       Return: sign in and continue
       Submit Enrollment: show information
+</pre>
       
 [html](http://darkgoyle.com/demos/iu/source/html)
 
 Look and Feel
 -----------------------
 Typography, spacing, color base, skins
-[css/base](http://darkgoyle.com/demos/iu/source/css/base)
+
+*[css/base](http://darkgoyle.com/demos/iu/source/css/base)
 
 Media queries
-[css/media](http://darkgoyle.com/demos/iu/source/css/media)
+
+*[css/media](http://darkgoyle.com/demos/iu/source/css/media)
 
 Animations and transitions
-[css/4d](http://darkgoyle.com/demos/iu/source/css/4d)
+
+*[css/4d](http://darkgoyle.com/demos/iu/source/css/4d)
 
 Interaction Design
 ---------------
 Adding response reflexes to user actions (interactivity)
-[js/on](http://darkgoyle.com/demos/iu/source/js/on)
+
+*[js/on](http://darkgoyle.com/demos/iu/source/js/on)
 
 Steps (input pacing - baby steps - form wizard)
-[js/step](http://darkgoyle.com/demos/iu/source/js/step)
+
+*[js/step](http://darkgoyle.com/demos/iu/source/js/step)
 
 Now you try
 -----------
-[documentation]{http://api.darkgoyle.com/}
+[documentation](http://api.darkgoyle.com/)
 
 How-To
 ------
@@ -62,6 +70,8 @@ Changes
 
 To do:
 -----
+* add data schema
+* add html semantics
 * add css
 * add mock.js
 * add tests.js
