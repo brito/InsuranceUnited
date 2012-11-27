@@ -2,7 +2,6 @@ Insurance United
 ===============
 
 A proof of concept for prototyping for a fictional entity.
-
 * [demo](http://brito.github.com/InsuranceUnited/ "Live demo")
 * [source](http://github.com/brito/InsuranceUnited "Source code")
 
@@ -29,30 +28,25 @@ Story:
 Look and Feel
 -----------------------
 Typography, spacing, color base, skins
-
-*[css/base](http://darkgoyle.com/demos/iu/source/css/base)
+* [css/base](http://darkgoyle.com/demos/iu/source/css/base)
 
 Media queries
-
-*[css/media](http://darkgoyle.com/demos/iu/source/css/media)
+* [css/media](http://darkgoyle.com/demos/iu/source/css/media)
 
 Animations and transitions
-
-*[css/4d](http://darkgoyle.com/demos/iu/source/css/4d)
+* [css/4d](http://darkgoyle.com/demos/iu/source/css/4d)
 
 Interaction Design
 ---------------
 Adding response reflexes to user actions (interactivity)
-
-*[js/on](http://darkgoyle.com/demos/iu/source/js/on)
+* [js/on](http://darkgoyle.com/demos/iu/source/js/on)
 
 Steps (input pacing - baby steps - form wizard)
-
-*[js/step](http://darkgoyle.com/demos/iu/source/js/step)
+* [js/step](http://darkgoyle.com/demos/iu/source/js/step)
 
 Now you try
 -----------
-[documentation](http://api.darkgoyle.com/)
+* [documentation](http://api.darkgoyle.com/)
 
 How-To
 ------
@@ -68,9 +62,11 @@ Changes
 * add [favicon](http://brito.github.com/InsuranceUnited/favicon.png)
 * add [apple-touch-icon](http://brito.github.com/InsuranceUnited/favicon.png)
 * add [data schema](http://brito.github.com/InsuranceUnited/planning/schema.yml)
+* add [json schema](http://brito.github.com/InsuranceUnited/planning/schema.js)
 
 To do:
 -----
+* add schemata translator into html 
 * add html semantics
 * add css
 * add mock.js
