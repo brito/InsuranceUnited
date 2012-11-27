@@ -3,22 +3,44 @@ Insurance United
 
 A proof of concept for prototyping for a fictional entity.
 
-* [demo](http://brito.github.com/InsuranceUnited/ "Demo on GitHub")
+* [demo](http://brito.github.com/InsuranceUnited/ "Live demo")
+* [source](http://github.com/brito/InsuranceUnited "Source code")
 
+These are not ready yet
+* [presentation](http://rvl.io/brito/InsuranceUnited "Presentation deck")
+* [video](http://youtube.com/darkgoyle/InsuranceUnited "Audio-visual")
 
-It all starts with meaning
+Information Architecture
 --------------------------
+Story:
+  Plot: (user flows)
+    Scenes: (user flow)
+      Load: show logo and enroll button
+      Quote: press enroll, enter zip or city, see options
+      Enroll: enter personal information, create record: register
+      Return: sign in and continue
+      Submit Enrollment: show information
+      
+[html](http://darkgoyle.com/demos/iu/source/html)
 
-[semantics]{http://darkgoyle.com/demos/iu/source/html/0}
-
-Then, Intent
+Look and Feel
 -----------------------
-[behaviors]{http://darkgoyle.com/demos/iu/source/js/0}
+Typography, spacing, color base, skins
+[css/base](http://darkgoyle.com/demos/iu/source/css/base)
 
-Finally, Polish
+Media queries
+[css/media](http://darkgoyle.com/demos/iu/source/css/media)
+
+Animations and transitions
+[css/4d](http://darkgoyle.com/demos/iu/source/css/4d)
+
+Interaction Design
 ---------------
-[appearance]{http://darkgoyle.com/demos/iu/source/css/0}
+Adding response reflexes to user actions (interactivity)
+[js/on](http://darkgoyle.com/demos/iu/source/js/on)
 
+Steps (input pacing - baby steps - form wizard)
+[js/step](http://darkgoyle.com/demos/iu/source/js/step)
 
 Now you try
 -----------
@@ -26,6 +48,7 @@ Now you try
 
 How-To
 ------
+Technical details on how the parts are built
 [REST-JSON database web service]{http://nullisnull.blogspot.com/}
 
 Changes

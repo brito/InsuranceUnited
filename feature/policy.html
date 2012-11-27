@@ -1,0 +1,56 @@
+<form id=policy data>
+
+  <label> Where do you live?
+    <input name=address placeholder="zip or city"></label>
+    
+  <fieldset data=user id=member>
+    <legend>About You</legend>
+    <p>Please help us get you the best plan by completing the following form:
+    <label>Gender:
+      <input name=gender type=radio value=Male> Male
+      <input name=gender type=radio value=Female> Female </label>
+      
+    <label>Do you smoke tobacco? <input type=checkbox name=smoker> Yes</label>
+    <label class=when-female>Are you pregnant? <input type=checkbox name=pregnant>  Yes</label>
+    <script></script>
+    <label>Are you disabled? <input type=checkbox name=disabled> Yes</label>
+    
+    <script id=load_user_auth>$.fetch('user').insertBefore('#member section:first')</script>
+    
+    <section data>
+	    <label>What is your name?
+	      <input name=given_name placeholder=First>
+	      <input name=family_name placeholder=Last></label>
+	    <input type=hidden name=full_name>
+	    
+	    <script> $('#enroll')
+	      .on('keyup', '[name=given_name],[name=family_name]', function(){
+	        // FIXME this event is not captured for some reason...
+	        console.debug(arguments)
+	        $('#member legend').text($('[name=full_name]')
+	            .val([$('[name=given_name]').val(), 
+	                  $('[name=family_name]').val()].join(' '))
+	            .trigger('change')
+	            .val())  })</script>
+		      
+		  <label>Born on
+      <input name=date_of_birth type=date placeholder="birth date"></label>
+      
+      <label>
+        Do you have any dependents? <input type=checkbox name=dependents> Yes</label>
+      <script> $('#enroll')
+        .on('change', '[name=dependents]', function(){  })</script>
+        
+      <fieldset data>
+        
+      </fieldset>
+    </section>
+    
+	   
+  </fieldset>
+  <button>Continue</button>
+</form>
+
+<script>
+  $('#enroll')
+    .on('change', function upstream_data(){});</script>

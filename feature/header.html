@@ -1,0 +1,12 @@
+<header id=header>
+	<h1>
+	  <a href="/" title=$title id=logo>IU</a>
+	  $title
+	</h1>
+</header>
+
+<script>$(function(){
+	$('#header h1').interpolate({
+	  title: 'Insurance United'
+	});
+})</script>

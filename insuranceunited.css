@@ -10,6 +10,8 @@ input { text-align:center; font-size:inherit; padding:.3em 2.6em;
   box-shadow:inset 0 1px 2px rgba(0,0,0, .55), 0px 1px 1px rgba(255,255,255,.5); }
   input:hover,input:focus { opacity:1; border:1px solid #08c; outline:none;
     box-shadow: inset 0 1px 2px rgba(255,255,255, .35), 0px 1px 15px rgba(0,246,255,.5) }
+input[type=radio],input[type=checkbox] { display:inline-block }
+
 button { font-size:inherit; color:#333; cursor:pointer;
   padding:.3em 2.6em; border-radius:.3em;
   border: .001em solid rgba(0,0,0,.3); text-shadow:0 1px 0 rgba(255,255,255,.6);
@@ -17,8 +19,12 @@ button { font-size:inherit; color:#333; cursor:pointer;
   background:linear-gradient(rgba(255,255,255,0.4), rgba(0,0,0,0.1)) #ccc }
   button:hover { background-image:linear-gradient(rgba(255,255,255,.7), rgba(0,0,0,.3)) }
   button:active { background-image:linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)) }
+fieldset {}
+label { display:block }
 
 h1 { text-shadow:2px 2px 1px rgba(0,0,0,.5) }
+
+form i { display:block }
 
 @keyframes manifest {
 	from { transform:scale(1.1); opacity:0 } 
@@ -31,7 +37,7 @@ h1 { text-shadow:2px 2px 1px rgba(0,0,0,.5) }
   background:rgba(255,255,255,.2);
   animation:manifest 1s 1s }
 
-#enroll {  }
+#policy {  }
 
 /* skin */
 body.blue { background:#2b81af; color:white }

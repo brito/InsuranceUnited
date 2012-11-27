@@ -8,17 +8,14 @@
 <title>Insurance United</title>
 
 <body class=blue>
-<header>
-  <h1 id=title>Insurance United</h1>
-</header>
 
 <script src="$.js"></script>
+<script src="js/lib.js"></script>
 <!--script src="https://raw.github.com/phiveleven/gnius/master/src/gnius.js"></script-->
-<script src="load.js"></script>
-<script>
-load ('logo replaceAll #title')
-load ('enroll insertAfter header')
-load ('auth insertAfter header')
+
+<script id=s1>
+$.fetch('header').prependTo('body');
+$.fetch('policy').insertAfter('#s1');
 </script>
 
 

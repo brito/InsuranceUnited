@@ -1,28 +1,17 @@
-<form id=auth>
-  <input name=email type=email placeholder=email><br>
-  <input class=when-recognized name=password type=password data-typetoggle=#showpw placeholder=password><br>
-  <label class=when-recognized><input id=showpw type=checkbox> Show Password</label><br>
-  <button class=when-recognized>Continue</button>
+<form id=user>
+  <i>To see and save your policy, please tell us how to contact you</i>
+  <input name=tel type=tel placeholder="by phone"> or
+  <input name=email type=email placeholder="by email"><br>
+  
+  <i>If you have been here before</i>
+  <input name=password type=password data-typetoggle=#showpw placeholder="enter your password"><br>
+  <label><input id=showpw type=checkbox> Show Password</label><br>
+  
+  <button>Continue</button>
 </form>
 
 <script>
-$.fn.notify = function(name){
-  // setup forms only
-  this.filter('form').each(function(){
-    var form = $(this);
-    // switch to xhr submit
-    form.on('submit', function(){
-      form.serialize().split('&').forEach(function(pair){
-        pair.replace(/([^=]+)=(.*)/,function(pair,name,value){
-          $('[name='+name+']').closest('[data]').data(name, value);
-        });
-      });
-      return false;
-    });
-  });
-};
-
-$('#auth')
+$('#user')
   // peripherals
   .on('keyup', '[name=email]', function(){
     $(this).notify();
