@@ -5,13 +5,17 @@
 
 body { text-align:center; perspective:22em }
 a { color:inherit; text-decoration:none }
-input { text-align:center; font-size:inherit }
+input { text-align:center; font-size:inherit; padding:.3em 2.6em;
+  border-radius:.3em; border:.001em solid #666; opacity:.5;
+  box-shadow:inset 0 1px 2px rgba(0,0,0, .55), 0px 1px 1px rgba(255,255,255,.5); }
+  input:hover,input:focus { opacity:1; border:1px solid #08c; outline:none;
+    box-shadow: inset 0 1px 2px rgba(255,255,255, .35), 0px 1px 15px rgba(0,246,255,.5) }
 button { font-size:inherit; color:#333; cursor:pointer;
   padding:.3em 2.6em; border-radius:.3em;
   border: .001em solid rgba(0,0,0,.3); text-shadow:0 1px 0 rgba(255,255,255,.6);
   box-shadow:0 1px 0 rgba(255, 255, 255, 0.6), 0 1px rgba(255, 255, 255, 0.4) inset;
   background:linear-gradient(rgba(255,255,255,0.4), rgba(0,0,0,0.1)) #ccc }
-  button:hover { background-image: linear-gradient(rgba(0,0,0,0.1), rgba(255,255,255,0.4)) }
+  button:hover { background-image:linear-gradient(rgba(255,255,255,.7), rgba(0,0,0,.3)) }
   button:active { background-image:linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)) }
 
 h1 { text-shadow:2px 2px 1px rgba(0,0,0,.5) }
@@ -29,13 +33,9 @@ h1 { text-shadow:2px 2px 1px rgba(0,0,0,.5) }
 
 #enroll {  }
 
-/* color */
+/* skin */
 body.blue { background:#2b81af; color:white }
 .blue button { background-color:#4192d9; color:#fff; text-shadow:0 -1px 1px #000 }
-
-/* interaction affordances */
-a:visited { opacity:.8 }
-a:hover { transform:scale(1.01); opacity:1 }
 
 /* experience */
 [class^=when-]{ display:none }
