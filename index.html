@@ -20,50 +20,13 @@ $.fetch('policy').insertAfter('#s1');
 
 
 
-<form id=members>
-  <h1>You and Your Family</h1>
-  <p>Please provide information about you and the family members to be insured.
-  <fieldset>
-    <legend>You</legend>
-    <label>Name
-      <input name=first_name placeholder=First required>
-      <input name=last_name placeholder=Last required></label>
-    <label>Date of Birth
-      <input name=date_of_birth type=date placeholder="MM/DD/YYYY" required></label>
-    <label>Gender
-      <input name=gender type=radio value=Male required> Male
-      <input name=gender type=radio value=Female required> Female </label>
-    <label>Social Security Number
-      <input name=ssn placeholder="XXX-XX-XXXX" pattern="\d{3}-?\d{2}-?\d{4}" required></label>
-    <label>Relationship
-      <select name=relationship>
-        <option value=self selected>Self
-        <option value=spouse>Spouse
-        <option value=child>Child
-        <option value=parent>Parent
-      </select></label>
-      
-    <label>Smoker <input type=checkbox></label>
-    <label>Pregnant <input type=checkbox></label>
-    <label>Disabled <input type=checkbox></label>
-  </fieldset>
-  
-  <button type=button id=add_member>Add Another Member</button>
-  <button>Continue</button>
-</form>
 
 <form id=household>
   <h1>Your Household</h1>
   <p>Please provide information about your household.
   <fieldset>
     <legend>Residence Address</legend>
-    <label>Street Address
-      <input name=address required>
-      <input name=address2></label>
-    <label>City
-      <input name=city required></label>
-    <label>Zip Code
-      <input name=zipcode pattern="\d{5}" required</label>
+    
   </fieldset>
   
   <fieldset>

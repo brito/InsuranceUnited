@@ -1,17 +1,19 @@
-<form id=user>
+<form id=member>
   <i>To see and save your policy, please tell us how to contact you</i>
   <input name=tel type=tel placeholder="by phone"> or
   <input name=email type=email placeholder="by email"><br>
   
-  <i>If you have been here before</i>
-  <input name=password type=password data-typetoggle=#showpw placeholder="enter your password"><br>
-  <label><input id=showpw type=checkbox> Show Password</label><br>
+  <span class=when-returning>
+	  <i>If you have been here before</i>
+	  <input name=password type=password data-typetoggle=#showpw placeholder="enter your password"><br>
+	  <label><input id=showpw type=checkbox> Show Password</label><br>
+  </span>
   
   <button>Continue</button>
 </form>
 
 <script>
-$('#user')
+$('#member')
   // peripherals
   .on('keyup', '[name=email]', function(){
     $(this).notify();
@@ -46,7 +48,7 @@ $('#user')
 	  },
 	  'change': function(){},
 	  'init': function(e){
-	    console.info(e.type, arguments);
+	    console.info(e.type, this);
 	  } })
   .trigger('init');
 

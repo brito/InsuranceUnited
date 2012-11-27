@@ -10,18 +10,23 @@ data:
       zip:
       city:
     &owner owner:
+      gender:
+      smoker: false
+      pregnant: false
+      disabled: false
+      birthdate:
       name:
       contact:
         email:
         phone:
-        address:
-        postal:
-      birthdate:
-      smoker: false
-      gender:
-      pregnant: false
-      disabled: false
     insureds:
       - relationship: self
+        ssn:
         member: *owner
+    household:
+        address:
+          street:
+          city:
+          zip:
+        postal:
      

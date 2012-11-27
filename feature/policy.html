@@ -1,56 +1,82 @@
-<form id=policy data>
+<script id=load_user_auth>
+  $.fetch('member').insertBefore('#policy')</script>
 
-  <label> Where do you live?
-    <input name=address placeholder="zip or city"></label>
+<form id=policy data=policy>
+  <input type=hidden name=status value=draft>
+  <input type=hidden name=version value=0>
+  <input type=hidden name=number>
+
+  <label data=region> Region:
+    <input name=zip placeholder="zip code"> or
+    <input name=city placeholder="city"></label>
     
-  <fieldset data=user id=member>
-    <legend>About You</legend>
-    <p>Please help us get you the best plan by completing the following form:
-    <label>Gender:
+  <fieldset data=insureds>
+		<legend data=name>You</legend>
+		<i>Please help us get you the best plan by completing the following</i>
+		
+	   <label data=name>Name
+	     <input name=given_name placeholder=First>
+	     <input name=family_name placeholder=Last>
+	     <input type=hidden name=full_name></label>
+	     
+	   <label>Social Security Number
+      <input name=ssn placeholder="XXX-XX-XXXX" pattern="\d{3}-?\d{2}-?\d{4}"></label>
+	     
+	   <label class=when-dependent>Relationship
+	     <select name=relationship>
+	       <option value=spouse>Spouse
+	       <option value=child>Child
+	       <option value=parent>Parent
+	     </select></label>
+
+    <label>Gender
       <input name=gender type=radio value=Male> Male
       <input name=gender type=radio value=Female> Female </label>
       
     <label>Do you smoke tobacco? <input type=checkbox name=smoker> Yes</label>
     <label class=when-female>Are you pregnant? <input type=checkbox name=pregnant>  Yes</label>
-    <script></script>
     <label>Are you disabled? <input type=checkbox name=disabled> Yes</label>
     
-    <script id=load_user_auth>$.fetch('user').insertBefore('#member section:first')</script>
-    
-    <section data>
-	    <label>What is your name?
-	      <input name=given_name placeholder=First>
-	      <input name=family_name placeholder=Last></label>
-	    <input type=hidden name=full_name>
-	    
-	    <script> $('#enroll')
-	      .on('keyup', '[name=given_name],[name=family_name]', function(){
-	        // FIXME this event is not captured for some reason...
-	        console.debug(arguments)
-	        $('#member legend').text($('[name=full_name]')
-	            .val([$('[name=given_name]').val(), 
-	                  $('[name=family_name]').val()].join(' '))
-	            .trigger('change')
-	            .val())  })</script>
-		      
-		  <label>Born on
-      <input name=date_of_birth type=date placeholder="birth date"></label>
-      
-      <label>
-        Do you have any dependents? <input type=checkbox name=dependents> Yes</label>
-      <script> $('#enroll')
-        .on('change', '[name=dependents]', function(){  })</script>
-        
-      <fieldset data>
-        
-      </fieldset>
-    </section>
-    
-	   
-  </fieldset>
+	  <label>Born
+     <input name=birthdate type=date placeholder="birth date"></label>
+     
+    <button type=button>Add a dependent</button>
+   </fieldset>
+
+   <fieldset data=household>
+     <section data=address>
+	      <label>Street Address
+	      <textarea name=street required rows=2 placeholder="123 Blueberry"></textarea></label>
+	    <label>City
+	      <input name=city required placeholder="Beverly Hills"></label>
+	    <label>Zip Code
+	      <input name=zipcode pattern="\d{5}" required placeholder="90292"></label>
+     </section>
+     
+     <section data=mailing>
+       <label class=when-not-same>
+        <input type=checkbox checked> Same as above</label>
+     </section>
+     
+   </fieldset>   
+  
   <button>Continue</button>
 </form>
 
 <script>
-  $('#enroll')
-    .on('change', function upstream_data(){});</script>
+$('#policy')
+.on('change', function upstream_data(){})
+
+// when changing name, update legend
+.on('keyup', '[name=given_name],[name=family_name]', function(){
+  // FIXME this event is not captured for some reason...
+  console.debug(arguments)
+  $('#owner legend').text($('[name=full_name]')
+      .val([$('[name=given_name]').val(), 
+            $('[name=family_name]').val()].join(' '))
+      .trigger('change')
+      .val())  })
+      
+// adding dependents
+.on('change', '[name=dependents]', function(){  })
+</script>

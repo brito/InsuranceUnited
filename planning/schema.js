@@ -7,7 +7,7 @@ Policy: {
   number: null,
   region : { zip : null, city : null },
   owner : ('a Member'),
-  insureds : [{ relationship : 'self', member : ('the policy owner') }] },
+  insureds : [{ relationship : 'self', member : ('this policy owner') }] },
 
 // Member record
 Member: {
