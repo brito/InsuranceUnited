@@ -34,4 +34,4 @@ for (var name in schemata)
         // not a deep copy
         this[property] = scheme[property];
     };
-  })();
+  })(name, schemata[name]);
