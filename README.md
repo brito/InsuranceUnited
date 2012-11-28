@@ -58,10 +58,22 @@ Changes
 * add [json schema](http://brito.github.com/InsuranceUnited/planning/schema.js)
 * add [html semantics](http://brito.github.com/InsuranceUnited/features/policy.html)
 * add base [styles](http://brito.github.com/InsuranceUnited/insuranceunited.css)
-* add form [styles](http://brito.github.com/InsuranceUnited/insuranceunited.css)
 
 To do:
 -----
+* Wednesday, November 28
+  # "looks like it works"
+    * stepping through (like a form wizard)
+      * show only current section (from location hash)
+      * bind continue (next)
+      * check that back button works
+    * input.onchange: roll up data to container
+    * data.onchange: save state
+      * restore state
+        * sign in
+          * register
+            * CORS setup for darkgoyle.com db API 
+
 * add mock.js
 * add tests.js
 * add api.js
