@@ -10,18 +10,11 @@ These are not ready yet
 * [video](http://youtube.com/darkgoyle/InsuranceUnited "Audio-visual")
 * most of the links below don't work yet
 
-Information Architecture
+Features
 --------------------------
-<pre>
-Story:
-  Plot: (user flows)
-    Scenes: (user flow)
-      Load: show logo and enroll button
-      Quote: press enroll, enter zip or city, see options
-      Enroll: enter personal information, create record: register
-      Return: sign in and continue
-      Submit Enrollment: show information
-</pre>
+* register new member and sign-in
+* get a quote, create and update policy details
+* enroll
       
 [html](http://darkgoyle.com/demos/iu/source/html)
 
@@ -63,15 +56,15 @@ Changes
 * add [apple-touch-icon](http://brito.github.com/InsuranceUnited/favicon.png)
 * add [data schema](http://brito.github.com/InsuranceUnited/planning/schema.yml)
 * add [json schema](http://brito.github.com/InsuranceUnited/planning/schema.js)
+* add [html semantics](http://brito.github.com/InsuranceUnited/features/policy.html)
+* add [base styles](http://brito.github.com/InsuranceUnited/insuranceunited.css)
 
 To do:
 -----
-* add schemata translator into html 
-* add html semantics
-* add css
 * add mock.js
 * add tests.js
 * add api.js
+* add schemata translator into html 
 
 * add [custom domain]()
 * all [tests]() pass

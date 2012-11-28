@@ -21,54 +21,8 @@ $.fetch('policy').insertAfter('#s1');
 
 
 
-<form id=household>
-  <h1>Your Household</h1>
-  <p>Please provide information about your household.
-  <fieldset>
-    <legend>Residence Address</legend>
-    
-  </fieldset>
-  
-  <fieldset>
-    <legend>Mailing Address</legend>
-    <input type=checkbox checked> Same as above
-  </fieldset>
-  
-  <fieldset>
-    <legend>Total Household Income</legend>
-    <label>Income Source
-      <input name=income_source required></label>
-    <label>Income Amount
-      $<input name=income_amount type=number required> per 
-      <select name=income_period>
-        <option value=year>Year
-        <option value=month>Month
-      </select></label>
-  </fieldset>
-  <button>Continue</button>
-</form>
 
-<form id=enroll>
-  <p>Based on the information provided, we found the following plans for you.<br>
-    Please review the plans and make your selection
-  <table>
-    <thead>
-      <th>Plan <th>Rating <th>Plan Costs
-    <tbody>
-      <td><input type=radio name=plan>ACME <td>A B <td> $50
-        
-  </table>
-  <button>Enroll</button>
-</form>
 
-<section id=confirm>
-  <h1>Confirmation</h1>
-  <p>Your enrollment has been submitted to the insurance provider for processing.<br>
-    You will be notified at <span>your email address on file</span> when it has been processed.<br>
-    Your reference number is 2340897234.</p>
-    
-  <a href="#sign-out">Exit</a> 
-</section>
 
 <footer>&copy; 2012 Insurance United. All rights reserved.</footer>
 

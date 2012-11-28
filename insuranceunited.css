@@ -5,21 +5,35 @@
 
 body { text-align:center; perspective:22em; font:100%/1.6 serif }
 a { color:inherit; text-decoration:none }
-input { text-align:center; font-size:inherit; padding:.3em 2.6em;
-  border-radius:.3em; border:.001em solid #666; opacity:.5;
+input, textarea, select { text-align:center; font-size:inherit; font-family:inherit;
+  padding:.3em 2.6em; opacity:.5 }
+input, textarea {
+  border-radius:.3em; border:.001em solid #666; 
   box-shadow:inset 0 1px 2px rgba(0,0,0, .55), 0px 1px 1px rgba(255,255,255,.5); }
-  input:hover,input:focus { opacity:1; border:1px solid #08c; outline:none;
+  textarea { padding:.3em 0; vertical-align:top }
+  input:hover, input:focus,
+  textarea:hover, textarea:focus,
+  select:hover, select:focus { opacity:1; outline:none }
+  input:hover, input:focus,
+  textarea:hover, textarea:focus {
+    border:1px solid #08c;
     box-shadow: inset 0 1px 2px rgba(255,255,255, .35), 0px 1px 15px rgba(0,246,255,.5) }
 input[type=radio],input[type=checkbox] { display:inline-block }
 
 button { font-size:inherit; color:#333; cursor:pointer;
-  padding:.3em 2.6em; border-radius:.3em;
+  padding:.3em 2.6em; border-radius:.3em; margin:1em;
   border: .001em solid rgba(0,0,0,.3); text-shadow:0 1px 0 rgba(255,255,255,.6);
   box-shadow:0 1px 0 rgba(255, 255, 255, 0.6), 0 1px rgba(255, 255, 255, 0.4) inset;
   background:linear-gradient(rgba(255,255,255,0.4), rgba(0,0,0,0.1)) #ccc }
   button:hover { background-image:linear-gradient(rgba(255,255,255,.7), rgba(0,0,0,.3)) }
   button:active { background-image:linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)) }
-label { display:block }
+label { font-variant:small-caps; font-size:90%; font-weight:bold }
+label > * { font-size:110% }
+
+fieldset { background:rgba(255,255,255,.1); border:1px solid rgba(0,0,0,.3);
+  margin:2em auto }
+legend { padding:.3em 2.6em; background:rgba(255, 255, 255, 0.5); color:#000;
+  box-shadow:1px 1px 3px rgba(0,0,0,.5) }
 
 /*
 [data][id] { box-shadow:-0.3ex -1.3ex .3ex rgba(161, 8, 0, 0.33) }
@@ -30,7 +44,7 @@ label { display:block }
 
 h1 { text-shadow:2px 2px 1px rgba(0,0,0,.5) }
 
-form i { display:block }
+form i { display:block; font:inherit; margin:1em }
 
 @keyframes manifest {
 	from { transform:scale(1.1); opacity:0 } 
@@ -43,18 +57,11 @@ form i { display:block }
   background:rgba(255,255,255,.2);
   animation:manifest 1s 1s }
 
-#policy {  }
-
 /* skin */
 body { font-family:sans-serif }
 body.blue { background:#2b81af; color:white }
-.blue button { background-color:#4192d9; color:#fff; text-shadow:0 -1px 1px #000 }
+.blue button:not([type]) { background-color:#4192d9; color:#fff;
+  text-shadow:0 -1px 1px #000 }
 
 /* experience */
 [class^=when-]{ display:none }
-  
-@keyframes shrink {
-	from { opacity:0; transform:scale(50) }
-	to { opacity:1; transform:scale(1) }}
-header {  }
-header.loading {  }

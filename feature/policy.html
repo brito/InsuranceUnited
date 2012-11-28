@@ -14,63 +14,87 @@
 		<legend data=name>You</legend>
 		<i>Please help us get you the best plan by completing the following</i>
 		
-	   <label data=name>Name
-	     <input name=given_name placeholder=First>
-	     <input name=family_name placeholder=Last>
-	     <input type=hidden name=full_name></label>
+	   <label data=name> Name
+	     <input name=given_name placeholder=First></label>
+	   <label data=name>
+	     <input name=family_name placeholder=Last></label>
+	   <label data=name>
+	     <input type=hidden name=full_name></label><br>
 	     
-	   <label>Social Security Number
+	   <label> Social Security Number
       <input name=ssn placeholder="XXX-XX-XXXX" pattern="\d{3}-?\d{2}-?\d{4}"></label>
 	     
-	   <label class=when-dependent>Relationship
+	   <label class=when-dependent> Relationship
 	     <select name=relationship>
 	       <option value=spouse>Spouse
 	       <option value=child>Child
 	       <option value=parent>Parent
-	     </select></label>
+	     </select></label><br>
 
-    <label>Gender
-      <input name=gender type=radio value=Male> Male
-      <input name=gender type=radio value=Female> Female </label>
+    <label> Gender
+      <input name=gender type=radio value=Male> Male </label>
+    <label>
+      <input name=gender type=radio value=Female> Female </label><br>
       
-    <label>Do you smoke tobacco? <input type=checkbox name=smoker> Yes</label>
-    <label class=when-female>Are you pregnant? <input type=checkbox name=pregnant>  Yes</label>
-    <label>Are you disabled? <input type=checkbox name=disabled> Yes</label>
+    <label> Do you smoke tobacco? <input type=checkbox name=smoker> Yes</label><br>
+    <span class=when-female>
+	    <label>Are you pregnant? <input type=checkbox name=pregnant>  Yes</label><br>
+    </span>
+    <label> Are you disabled? <input type=checkbox name=disabled> Yes</label><br>
     
-	  <label>Born
+	  <label> Born
      <input name=birthdate type=date placeholder="birth date"></label>
      
-    <button type=button>Add a dependent</button>
+    <button type=button> Add a dependent </button>
    </fieldset>
 
    <fieldset data=household>
+     <legend> Your household </legend>
      <section data=address>
-	      <label>Street Address
-	      <textarea name=street required rows=2 placeholder="123 Blueberry"></textarea></label>
-	    <label>City
-	      <input name=city required placeholder="Beverly Hills"></label>
-	    <label>Zip Code
+	      <label> Street Address
+	      <textarea name=street required rows=2 placeholder="123 Blueberry"></textarea></label><br>
+	    <label> City
+	      <input name=city required placeholder="Beverly Hills"></label><br>
+	    <label> Zip Code
 	      <input name=zipcode pattern="\d{5}" required placeholder="90292"></label>
      </section>
      
      <section data=mailing>
-       <label class=when-not-same>
+       <label class=when-not-same> Mailing Address
         <input type=checkbox checked> Same as above</label>
+        
+      <label> Street and Number
+        <textarea name=street required rows=2 placeholder="123 Blueberry"></textarea></label><br>
+      <label> City
+        <input name=city required placeholder="Beverly Hills"></label><br>
+      <label> Zip Code
+        <input name=zipcode pattern="\d{5}" required placeholder="90292"></label>
      </section>
      
-   </fieldset>   
-  
-  <button>Continue</button>
+     <section data=income>
+      <label> Source
+        <input name=source required></label>
+	    <label>Amount
+	      $<input name=amount type=number required></label>
+	      
+	    <label> Period
+	      <select name=period>
+	        <option value=year> Year
+	        <option value=month> Month
+	      </select></label>
+     </section>
+   </fieldset>
+   
+  <button> Continue </button>
 </form>
 
 <script>
 $('#policy')
-.on('change', function upstream_data(){})
+.on('change', console.log)
 
 // when changing name, update legend
-.on('keyup', '[name=given_name],[name=family_name]', function(){
-  // FIXME this event is not captured for some reason...
-  console.debug(arguments)
+.on('keyup', '[name=given_name],[name=family_name]', function(e){
+  console.debug(e.type, this)
   $('#owner legend').text($('[name=full_name]')
       .val([$('[name=given_name]').val(), 
             $('[name=family_name]').val()].join(' '))
