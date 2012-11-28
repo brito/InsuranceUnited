@@ -44,6 +44,9 @@ f[data][id]:target { background:rgba(255,255,255,.2);  }
 h1 { text-shadow:2px 2px 1px rgba(0,0,0,.5) }
 form i { display:block; font:inherit; margin:1em }
 
+#member { background:rgba(255,255,255,.8); color:#2b81af; padding:1em; text-align:center }
+#member input { display:inline-block }
+
 #logo { font:600%/1 serif; display:block;
   border:.001em solid rgba(255, 255, 255, 0.9);
   margin:0 auto .1em; border-width: .001em 0;
@@ -51,12 +54,11 @@ form i { display:block; font:inherit; margin:1em }
   text-shadow:2px 0 1px rgba(0,0,0,.5),-3px 0 1px rgba(0,0,0,.5), 0 0 20px;
   background:rgba(255,255,255,.2) }
   
-#member { background:rgba(255,255,255,.8); color:#2b81af; padding:1em; text-align:center }
-#member input { display:inline-block }
+#policy { max-width:800px; margin:auto; }
 
 [data=insureds],[data=household]  { overflow:hidden }
 .pii, .non-pii,
-[data=address],[data=mailing],[data=income] { float:left; width:50%; min-width:420px }
+[data=address],[data=mailing],[data=income] { float:left; width:50% }
 
 /* skin */
 body { font-family:sans-serif }
