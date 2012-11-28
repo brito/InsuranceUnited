@@ -44,7 +44,7 @@ f[data][id]:target { background:rgba(255,255,255,.2);  }
 h1 { text-shadow:2px 2px 1px rgba(0,0,0,.5) }
 form i { display:block; font:inherit; margin:1em }
 
-#member { background:rgba(255,255,255,.8); color:#2b81af; padding:1em; text-align:center }
+#member { color:#2b81af; padding:1em; text-align:center }
 #member input { display:inline-block; width:auto }
 
 #logo { font:600%/1 serif; display:block;
@@ -54,16 +54,17 @@ form i { display:block; font:inherit; margin:1em }
   text-shadow:2px 0 1px rgba(0,0,0,.5),-3px 0 1px rgba(0,0,0,.5), 0 0 20px;
   background:rgba(255,255,255,.2) }
   
-#policy { max-width:800px; margin:auto; }
+#policy { max-width:800px; margin:auto }
 
 [data=insureds],[data=household]  { overflow:hidden }
 .pii, .non-pii,
 [data=address],[data=mailing],[data=income] { float:left; width:50% }
 
-footer { background:rgba(255,255,255,.8); color:#2b81af; padding:.6em;
-  font-size:smaller; border-top:1px solid rgba(0,0,0,.5); margin-top:3em }
+footer { color:#2b81af; padding:1em 3em;
+  border-top:1px solid rgba(0,0,0,.3); font-size:smaller; margin-top:3em }
 
 /* skin */
+html, #member, footer { background:#d5e6ef }
 body { font-family:sans-serif }
 body.blue { background:#2b81af; color:white }
 .blue button:not([type]) { background-color:#4192d9; color:#fff;
@@ -71,3 +72,4 @@ body.blue { background:#2b81af; color:white }
 
 /* experience */
 [class^=when-]{ display:none }
+.hiding-above { transform:translateY(-100%); overflow:hidden; height:0; z-index:-1 }

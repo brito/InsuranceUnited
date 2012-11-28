@@ -1,4 +1,9 @@
-/* Schema generator for fictitious insurance company */
+/* Schemata for fictitious insurance company */
+
+// globals
+
+
+// probably not used
 var schemata = {
 // Insurance Policy
 Policy: {

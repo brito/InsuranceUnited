@@ -1,5 +1,5 @@
 
-/*! phiveleven.com/jquery.notify */
+/*! darkgoyle.com/jquery.notify */
 $.fn.notify = function(name){
   // setup forms only
   this.filter('form').each(function(){
@@ -23,23 +23,28 @@ $.fn.notify = function(name){
 };
 
 
-/*! phiveleven.com/jquery.import */
+/*! darkgoyle.com/jquery.fetch */
 $.fetch = function (feature){
   $.fetch.features = $.fetch.features || {};
   $.fetch.pending = $.fetch.pending || {};
   
+  // prepare and make content request
   var url = 'feature/' + feature + '.html',
-      promise = $.ajax({ url: url, dataType:'text' }).done(resolve).fail(console.error);
+      promise = $.ajax({ url: url, dataType:'text' })
+        .done(resolve)
+        .fail(console.error);
   
+  // load content into document
   function resolve(html){
     var config = $.fetch.pending[feature];
     if (config) {
       $.fetch.features[feature] = $(html)[config.method](config.selector);
       delete $.fetch.pending[feature];
-      console.info([feature, config.method, config.selector]);
+      recognize(feature, config.method, config.selector);
     }
   }
   
+  // bind deferred operations on retrieved content
   'prependTo appendTo insertBefore insertAfter replaceAll'.replace(/\S+/g, function(method){
     promise[method] = (function(){
       return function(selector){
@@ -48,6 +53,6 @@ $.fetch = function (feature){
     })(method);
   });
   
-  console.debug(feature);
+  $(document).trigger('new.feature.'+feature, feature);
   return promise;
 };

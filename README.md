@@ -78,10 +78,21 @@ To do:
 * add mock.js
 * add tests.js
 * add api.darkgoyle.com/db
-* add schemata translator into html?
 
 * add [custom domain]()
 * all [tests]() pass
 * add [presentation slides]()
 * add [presentation video]()
 * add [webex setup]()
+
+The future
+----------
+* add websockets demo
+* set up automated build and deploy
+* add story translator
+  * into unit tests
+* add css4d
+* add schemata translator
+  * into html
+* Flying cars
+* Personal robots
