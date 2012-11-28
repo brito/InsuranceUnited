@@ -57,7 +57,8 @@ Changes
 * add [data schema](http://brito.github.com/InsuranceUnited/planning/schema.yml)
 * add [json schema](http://brito.github.com/InsuranceUnited/planning/schema.js)
 * add [html semantics](http://brito.github.com/InsuranceUnited/features/policy.html)
-* add [base styles](http://brito.github.com/InsuranceUnited/insuranceunited.css)
+* add base [styles](http://brito.github.com/InsuranceUnited/insuranceunited.css)
+* add form [styles](http://brito.github.com/InsuranceUnited/insuranceunited.css)
 
 To do:
 -----

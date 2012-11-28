@@ -6,9 +6,6 @@ data:
     &status status: draft
     &version version: 0
     &number number:
-    region:
-      zip:
-      city:
     &owner owner:
       gender:
       smoker: false
@@ -29,4 +26,8 @@ data:
           city:
           zip:
         postal:
+          same as household: true
+          street:
+          city:
+          zip:
      
