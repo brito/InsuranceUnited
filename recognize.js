@@ -3,12 +3,13 @@
  */
 
 // debug
-debug = !0;
+var debug = !0;
 
 function recognize(something){ if (debug)
   // output
   console
-  // error result or message
+  // delivery method based on truthiness of 'something'
+  // TODO add delta and warn,debug,dir
     [ ['error','info'] [+!!something] ] (
         // a brute join
         [].join.call(arguments,' ')); }

@@ -101,6 +101,7 @@ try { history.pushState(member, 'Your Policy', '/your-policy'); }
 catch (e) { location.hash = 'your-policy' }
 
 $('#policy')
+.snitch()
 // disable form validation for now
 .attr('novalidate', true)
 

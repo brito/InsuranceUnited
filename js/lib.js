@@ -1,26 +1,32 @@
 
 /*! darkgoyle.com/jquery.snitch */
-// comandeer submit event and send data changes upstream
-$.fn.snitch = function(){
-  // setup forms in this collection
-  this.filter('form').each(function(){
-    var form = $(this);
-    // switch to xhr submit
-    form.on('submit', function(){
-      // $.ajax(url, form.data()).done(trigger submit:after)
-      return false;
-    });
+// send data changes upstream
+$.fn.snitch = function snitch(){
+  debug && console.warn('setup snitch for', this);
+  return this.each(function(){
+    $(this)
+      // comptroller
+      .filter('form').submit(function(){
+        debug && console.dir($(this).data());
+        return false;
+      }).end()
+      
+      // ears
+      .find('[data]').on('change', console.warn).end()
+      
+      // snitch
+      .find('[name]').each(function(){
+        var ears = $(this).closest('[data]').add(this.form).eq(0);
+        debug && console.debug(this.id || this.name, 'is a snitch for', ears);
+        // setup event
+        $(this).change(function(){ 
+          if (!this.readonly) {
+            ears.data(this.name, $(this).val());
+            debug && console.warn(this.name, ears.data()); } });
+      }).end();
   });
-  
-  // fieldset: input, fieldset or form
-  function consume(fieldset){
-    fieldset.serialize().split('&').forEach(function(pair){
-      pair.replace(/([^=]+)=(.*)/,function(pair,name,value){
-        $('[name='+name+']').closest('[data]').data(name, value);
-      });
-    });
-  }
 };
+  
 
 
 /*! darkgoyle.com/jquery.fetch */
@@ -40,7 +46,7 @@ $.fetch = function (feature){
     if (config) {
       $.fetch.features[feature] = $(html)[config.method](config.selector);
       delete $.fetch.pending[feature];
-      recognize(feature, config.method, config.selector);
+      debug && console.debug(feature, config.method, config.selector);
     }
   }
   

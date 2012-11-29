@@ -22,7 +22,7 @@ recognize(
     .selector, 'loaded');
     
 $('#member')
-  // comandeer submit
+  .snitch()
   .submit(function(e){
     // if ok, load next
     $(this).slideUp()
@@ -32,7 +32,6 @@ $('#member')
   })
   // peripherals
   .on('keyup', '[name=email]', function(){
-    $(this).notify();
     var input = this;
     // debounce
     clearTimeout($(input).data('debounce'));
@@ -61,11 +60,7 @@ $('#member')
 			// Stop password maskingâ Jacob Nielsen
 			// http://www.useit.com/alertbox/passwords.html
 			$('[name=password]').showPassword();
-	  },
-	  'change': function(){},
-	  'init': function(e){
-	    debug && console.info(e.type, this);
-	  } })
-  .trigger('init');
+	  }
+});
 
 </script>

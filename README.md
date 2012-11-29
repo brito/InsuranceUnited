@@ -63,13 +63,14 @@ Changes
 * add table styles
 * feature "add a dependent" (and remove) is working now
 * added cache buster for dynamic content fetch
+* data from forms automatically captured!
+    * input.onchange: roll up data to container
 
 To do:
 -----
 * Wednesday, November 28
   * "looks like it works"
     * calculate and filter policies
-    * input.onchange: roll up data to container
     * data.onchange: save state
       * restore state
         * from mock
@@ -80,7 +81,13 @@ To do:
   * fix adaptive layout
   * fix: hash to load :target
     * check that back button works?
+    
+* Thursday, November 29
+  * 1200 can enroll in a plan 
+    * register, sign-in and enroll
+  * 2100 add [presentation slides](rvl.io)  
 
+* fix mobile!
 * add mock.js
 * add tests.js
 * add api.darkgoyle.com/db
@@ -90,7 +97,6 @@ To do:
 
 * add [custom domain]()
 * all [tests]() pass
-* add [presentation slides]()
 * add [presentation video]()
 * add [webex setup]()
 
