@@ -65,7 +65,8 @@ To do:
 * Wednesday, November 28
   * "looks like it works"
       * show only current section (from location hash)
-      * check that back button works
+      * check that back button works?
+    * add a dependent
     * input.onchange: roll up data to container
     * data.onchange: save state
       * restore state

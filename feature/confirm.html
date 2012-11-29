@@ -1,11 +1,13 @@
 <section id=confirm>
   <h1>Confirmation</h1>
-  <p>Your enrollment has been submitted to the insurance provider for processing.<br>
-    You will be notified at 
-    <input readonly placeholder="your email address on file" name=email data=policy.owner>
-    when it has been processed.<br>
+  <p>Your enrollment has been submitted to the insurance provider for processing.
+  
+  <p>You will be notified at
+    <input readonly placeholder="your email or by phone" name=email data=policy.owner>
+    when it has been processed.
     
-    Your reference number is <input readonly name=number name=policy.number>.
+  <p>Your reference number is
+    <input readonly name=number name=policy.number placeholder=unavailable>
     
   <a href="#sign-out">Exit</a> 
 </section>

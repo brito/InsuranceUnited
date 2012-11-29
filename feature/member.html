@@ -15,8 +15,9 @@
 <script>
 // TODO implement as agnostic feature
 recognize(
-    $('#policy').addClass('when-authenticated').selector,
-    'loaded');
+    // hide policy until authenticated
+    $('#policy').addClass('when-authenticated')
+    .selector, 'loaded');
     
 $('#member')
   // comandeer submit
