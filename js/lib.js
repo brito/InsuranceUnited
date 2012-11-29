@@ -29,7 +29,7 @@ $.fetch = function (feature){
   $.fetch.pending = $.fetch.pending || {};
   
   // prepare and make content request
-  var url = 'feature/' + feature + '.html',
+  var url = 'feature/' + feature + '.html?'+ (+new Date).toString(36),
       promise = $.ajax({ url: url, dataType:'text' })
         .done(resolve)
         .fail(console.error);

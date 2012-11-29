@@ -61,7 +61,8 @@ Changes
 * add stepping through (like a form wizard)
     * show only current section (from location hash)
 * add table styles
-* feature "add a dependent" is working now
+* feature "add a dependent" (and remove) is working now
+* added cache buster for dynamic content fetch
 
 To do:
 -----
