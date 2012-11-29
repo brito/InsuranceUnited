@@ -1,4 +1,5 @@
-<form id=enroll>
+<script src="plans.json" type="application/json"></script>
+<form id=plans>
   <p>Based on the information provided, we found the following plans for you.<br>
   Please review the available plans and make your selection:
   <table>
@@ -26,12 +27,21 @@
 </form>
 
 <script>
-$('#enroll')
+console.clear();
+$('#plans')
   .submit(function(){
     $(this).hide();
     recognize('confirm', 'coming up');
-    $.fetch('confirm').insertAfter('#enroll');
+    $.fetch('confirm').insertAfter('#plans');
     return false;
   })
-  .find('table').interpolate();
+  // TODO fix filter()
+  .find('[data=plans]')
+  .mangle(function(plans){
+    recognize(plans, 'there are no plans, yo')
+    // get choices
+    // get plans from data (diff between pristine and filtered?)
+    // return filtered plans to data (don't write back or save as view "somewhere")
+  })
+  .interpolate();
 </script>

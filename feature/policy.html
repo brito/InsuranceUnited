@@ -108,9 +108,9 @@ $('#policy')
 	// comandeer submit
 	.submit(function(){
 	  $('#policy').hide();
-	  $.fetch('enroll').insertAfter(this);
+	  $.fetch('plans').insertAfter(this);
 	  // TODO promise callback
-	  recognize('enroll', 'coming up');
+	  recognize('plans', 'coming up');
 	  return false;
 	})
 	

@@ -144,14 +144,14 @@ $('#household').on({ 'submit': function(){
     });
     user.household[$('legend',this).text()] = set;
   });
-  user.step = '#enroll';
+  user.step = '#plans';
   $(document)
     .data('user', user)
     .trigger('save');
   return false;
 }});
 // enroll form
-$('#enroll').on({ 'submit': function(){
+$('#plans').on({ 'submit': function(){
   return false;
 }});
 

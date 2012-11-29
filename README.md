@@ -69,12 +69,14 @@ Changes
 To do:
 -----
 * Thursday, November 29
+  * can request policies using a web service
+    * filters services dynamically based on user choices
+    * web service call is a REST/JSON http interface to a LAMP stack (linux,apache,php,mysql)
+  * can translate from xml to json and update plans
+
   * figure out why squeals are not cascading up the chain
   * fix animations!
   * fix mobile!
-  * 1200 can enroll in a plan 
-    * register, sign-in and enroll
-  * 2100 add [presentation slides](rvl.io)  
   * "looks like it works"
     * calculate and filter policies
       * add special data rules on policy fields
