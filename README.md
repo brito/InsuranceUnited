@@ -61,12 +61,13 @@ Changes
 * add stepping through (like a form wizard)
     * show only current section (from location hash)
 * add table styles
+* feature "add a dependent" is working now
 
 To do:
 -----
 * Wednesday, November 28
   * "looks like it works"
-    * add a dependent
+    * calculate and filter policies
     * input.onchange: roll up data to container
     * data.onchange: save state
       * restore state

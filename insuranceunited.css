@@ -1,4 +1,4 @@
-*{ padding:0; margin:0; box-sizing:border-box; overflow:hidden;
+*{ padding:0; margin:0; box-sizing:border-box;
   animation-timing-function:cubic-bezier(.1,.5,0,1);
   transition:all .5s cubic-bezier(.1,.5,0,1);
   transform-style:preserve-3d }
@@ -34,6 +34,8 @@ button { font-size:inherit; color:#333; cursor:pointer;
   button:hover { background-image:linear-gradient(rgba(255,255,255,.5), rgba(0,0,0,.2));
     box-shadow:0 0 3px rgba(0,0,0,.3) }
   button:active { background-image:linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)) }
+button.remove:hover { background-color:#f00; color:#fff }
+  
 label { font-variant:small-caps; font-size:90%; font-weight:bold }
 label > * { font-size:110% }
 
@@ -64,9 +66,10 @@ form i { display:block; font:inherit; margin:1em }
   
 #policy { margin:auto }
 #policy button { display:block; clear:both }
+#policy button[class^=when-] { display:none }
 #policy fieldset button { float:right }
 
-.pii, .non-pii,
+fieldset > section,
 [data=address],[data=mailing],[data=income] { float:left; width:50% }
 
 #enroll { text-align:center }
@@ -76,6 +79,7 @@ form i { display:block; font:inherit; margin:1em }
     box-shadow:0 0 1px 1px rgba(0,0,0,.2), 0 0 3px 1px rgba(0,0,0,.3), -1px 1px 1px 1px rgba(255,255,255,.3) inset }
   #enroll td:first-child { border-radius:.1em 0 0 2.6em }
   #enroll td:last-child { border-radius:0 2em .1em 0 }
+  #enroll tr:hover td { background-color:rgba(255,255,255,.3) }
 
 #confirm { max-width:600px; margin:auto; text-align:center }
 

@@ -10,47 +10,46 @@
 		<legend data=name>You</legend>
 		<i>Please help us get you the best plan by completing the following</i>
 		
-		<section class=pii>
-		   <label data=name> 
-		     Name
+		<section>
+	   <label class=when-dependent>
+	     Relationship
+	     <select name=relationship>
+	       <option value=spouse>Spouse
+	       <option value=child>Child
+	       <option value=parent>Parent
+	     </select></label>
+	     
+		   <label> Name
 		     <input name=given_name placeholder=First></label>
-		   <label data=name>
-		     <input name=family_name placeholder=Last></label>
-		   <label data=name>
-		     <input type=hidden name=full_name></label><br>
+		   <label><input name=family_name placeholder=Last></label>
+		   <label><input type=hidden name=full_name></label><br>
 		     
 		   <label>
 		     Social Security Number
 		     <input name=ssn placeholder="XXX-XX-XXXX" pattern="\d{3}-?\d{2}-?\d{4}"></label>
-		     
-		   <label class=when-dependent
-		     Relationship
-		     <select name=relationship>
-		       <option value=spouse>Spouse
-		       <option value=child>Child
-		       <option value=parent>Parent
-		     </select></label><br>
-	    
-		  <label> Born
-	     <input name=birthdate type=date placeholder="birth date"></label>
     </section>
     
-    <section class=non-pii>
+    <section>
+      <label> Born
+       <input name=birthdate type=date placeholder="birth date"></label>
+       
 	    <label> 
 	      Gender <br>
 	      <input name=gender type=radio value=Male> Male </label>
 	    <label>
 	      <input name=gender type=radio value=Female> Female </label><br>
 	      
-	    <label> Do you smoke tobacco? <input type=checkbox name=smoker> Yes</label><br>
+	    <label> Smoker <input type=checkbox name=smoker> Yes</label><br>
 	    <span class=when-female>
-		    <label>Are you pregnant? <input type=checkbox name=pregnant>  Yes</label><br>
+		    <label> Pregnant <input type=checkbox name=pregnant>  Yes</label><br>
 	    </span>
-	    <label> Are you disabled? <input type=checkbox name=disabled> Yes</label><br>
+	    <label> Disabled <input type=checkbox name=disabled> Yes</label><br>
+	    
+	    <button type=button class="when-dependent remove">Remove</button>
     </section>
      
-    <button type=button> Add a dependent </button>
    </fieldset>
+   <button type=button id=add_a_dependent> Add a dependent </button>
 
    <fieldset data=household>
      <legend> Your household </legend>
@@ -102,8 +101,9 @@ try { history.pushState(member, 'Your Policy', '/your-policy'); }
 catch (e) { location.hash = 'your-policy' }
 
 $('#policy')
-// for now
+// disable form validation for now
 .attr('novalidate', true)
+
 // comandeer submit
 .submit(function(){
   $('#policy').slideUp();
@@ -112,17 +112,27 @@ $('#policy')
   recognize('enroll', 'coming up');
   return false;
 })
-.on('change', console.log)
+
+.on('change', console.log);
 
 // when changing name, update legend
-.on('keyup', '[name=given_name],[name=family_name]', function(e){
+$('[name=given_name],[name=family_name]').keyup(function(e){
   console.debug(e.type, this)
   $('#owner legend').text($('[name=full_name]')
       .val([$('[name=given_name]').val(), 
             $('[name=family_name]').val()].join(' '))
       .trigger('change')
-      .val())  })
+      .val())  });
       
 // adding dependents
-.on('change', '[name=dependents]', function(){  })
+$('#add_a_dependent').click(function(){ 
+  $('#policy [data=insureds]:first').clone()
+    .insertAfter('#policy [data=insureds]:last').hide().slideDown()
+    .find('.when-dependent').show().end()
+    .find('legend').text('a dependent').end();
+});
+// removing dependents
+$('#policy').on('click', '.when-dependent.remove', function(e){
+  $(e.target).closest('[data=insureds]').remove();
+});
 </script>

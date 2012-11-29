@@ -5,16 +5,13 @@
 // debug
 debug = !0;
 
-// darkgoyle.com/recognize
-function recognize(something){
-  if (debug)
+function recognize(something){ if (debug)
   // output
   console
   // error result or message
     [ ['error','info'] [+!!something] ] (
         // a brute join
-        [].join.call(arguments,' '));
-}
+        [].join.call(arguments,' ')); }
 
 // load test framework (qunit)
 $('<script>')
@@ -26,7 +23,7 @@ $($('<section>', { id: 'qunit' }))
 $(document)
   .one('keyup',function(e){ if (e.keyCode==27) $('#qunit').show() })
 
-// TODO define promise interfase for qunit tests (not yet loaded)
+// TODO define promise interfase for qunit tests not yet loaded
   
 // test tests  
 try { throw 'ಠ_ಠ' }
