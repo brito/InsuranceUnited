@@ -59,13 +59,13 @@ Changes
 * add [html semantics](http://brito.github.com/InsuranceUnited/features/policy.html)
 * add [styles](http://brito.github.com/InsuranceUnited/insuranceunited.css)
 * add stepping through (like a form wizard)
+    * show only current section (from location hash)
+* add table styles
 
 To do:
 -----
 * Wednesday, November 28
   * "looks like it works"
-      * show only current section (from location hash)
-      * check that back button works?
     * add a dependent
     * input.onchange: roll up data to container
     * data.onchange: save state
@@ -74,6 +74,10 @@ To do:
         * from db: sign in
           * register
             * CORS setup for darkgoyle.com db API 
+  * fix overflow hidden on form
+  * fix adaptive layout
+  * fix: hash to load :target
+    * check that back button works?
 
 * add mock.js
 * add tests.js

@@ -1,14 +1,27 @@
 <form id=enroll>
   <p>Based on the information provided, we found the following plans for you.<br>
-    Please review the plans and make your selection
+  Please review the available plans and make your selection:
   <table>
+    <caption><h1> Available Plans </h1></caption>
     <thead>
-      <th>Plan <th>Rating <th>Plan Costs
+      <th> Plan
+      <th> Type
+      <th> Quality
+      <th> Customer Service
+      <th> Annual Deductible
+      <th> Copay
+      <th> Premium
     
     <tr data=plans>
-      <td><input type=radio name=plan title="Select plan">ACME <td>A B <td> $50
-        
+      <td><input type=radio name=plan title="Select plan"> $name
+      <td> $planType 
+      <td> $qualityRating
+      <td> $customerServiceRating
+      <td> $annualDeductible
+      <td> $officeCoPay
+      <td> $premium
   </table>
+  
   <button>Enroll</button>
 </form>
 
@@ -19,5 +32,6 @@ $('#enroll')
     recognize('confirm', 'coming up');
     $.fetch('confirm').insertAfter('#enroll');
     return false;
-  });
+  })
+  .find('table').interpolate();
 </script>
