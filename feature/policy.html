@@ -107,7 +107,7 @@ $('#policy')
 	
 	// comandeer submit
 	.submit(function(){
-	  $('#policy').slideUp();
+	  $('#policy').hide();
 	  $.fetch('enroll').insertAfter(this);
 	  // TODO promise callback
 	  recognize('enroll', 'coming up');
@@ -133,7 +133,7 @@ $('#policy')
             .find('.when-dependent').show().end()
             .find('legend').text('a dependent').end()
             .find('[name]').val('').end()
-          .slideDown();
+          .show();
       });
   // removing dependents
   $('#policy').on('click', '.when-dependent.remove', function(e){

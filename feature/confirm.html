@@ -15,8 +15,8 @@
 <script>
 $('#confirm')
   .submit(function(){
-    $('#member').slideDown();
-    $('#confirm').slideUp();
+    $('#member').show();
+    $('#confirm').hide();
     recognize(location.hash = 'confirm', 'coming up');
     $('form').removeData().reset();
     return false;

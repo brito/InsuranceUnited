@@ -28,7 +28,7 @@
 <script>
 $('#enroll')
   .submit(function(){
-    $(this).slideUp();
+    $(this).hide();
     recognize('confirm', 'coming up');
     $.fetch('confirm').insertAfter('#enroll');
     return false;

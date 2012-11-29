@@ -12,7 +12,7 @@ $.fn.snitch = function snitch(){
       }).end()
       
       // ears
-      .find('[data]').on('change', function(){
+      .on('change', '[data]', function(){
         // go up the chain
         var ears = $(this).closest('[data]').add(this.form).eq(0),
             drop = ears.attr('data') || ears.attr('action'),
@@ -23,7 +23,7 @@ $.fn.snitch = function snitch(){
             ears.data(drop, payload);
         // else concat
         else ears.data(drop, [].concat([ears.data(), payload]))
-      }).end()
+      })
       
       // snitch
       .find('[name]').each(function(){

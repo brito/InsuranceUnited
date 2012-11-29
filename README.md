@@ -68,7 +68,13 @@ Changes
 
 To do:
 -----
-* Wednesday, November 28
+* Thursday, November 29
+  * figure out why squeals are not cascading up the chain
+  * fix animations!
+  * fix mobile!
+  * 1200 can enroll in a plan 
+    * register, sign-in and enroll
+  * 2100 add [presentation slides](rvl.io)  
   * "looks like it works"
     * calculate and filter policies
       * add special data rules on policy fields
@@ -85,14 +91,7 @@ To do:
   * fix adaptive layout
   * fix: hash to load :target
     * check that back button works?
-    
-* Thursday, November 29
-  * figure out why squeals are not cascading up the chain
-  * 1200 can enroll in a plan 
-    * register, sign-in and enroll
-  * 2100 add [presentation slides](rvl.io)  
 
-* fix mobile!
 * add mock.js
 * add tests.js
 * add api.darkgoyle.com/db

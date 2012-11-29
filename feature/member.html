@@ -26,8 +26,8 @@ $('#member')
   .snitch()
   .submit(function(e){
     // if ok, load next
-    $(this).slideUp()
-    $('#policy').slideDown();
+    $(this).hide()
+    $('#policy').show();
     recognize('policy', 'coming up');
     return false;
   })
