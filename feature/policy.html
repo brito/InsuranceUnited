@@ -98,6 +98,9 @@
 </form>
 
 <script>
+try { history.pushState(member, 'Your Policy', '/your-policy'); }
+catch (e) { location.hash = 'your-policy' }
+
 $('#policy')
 // for now
 .attr('novalidate', true)
@@ -106,7 +109,7 @@ $('#policy')
   $('#policy').slideUp();
   $.fetch('enroll').insertAfter(this);
   // TODO promise callback
-  recognize(location.hash = 'enroll', 'coming up');
+  recognize('enroll', 'coming up');
   return false;
 })
 .on('change', console.log)

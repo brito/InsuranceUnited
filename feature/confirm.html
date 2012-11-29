@@ -1,4 +1,4 @@
-<section id=confirm>
+<form id=confirm>
   <h1>Confirmation</h1>
   <p>Your enrollment has been submitted to the insurance provider for processing.
   
@@ -7,7 +7,17 @@
     when it has been processed.
     
   <p>Your reference number is
-    <input readonly name=number name=policy.number placeholder=unavailable>
+    <input readonly name=number name=policy.number placeholder=unavailable></p>
     
-  <a href="#sign-out">Exit</a> 
-</section>
+  <button>Exit</button> 
+</form>
+
+<script>
+$('#confirm')
+  .submit(function(){
+    $('#member').slideDown();
+    $('#confirm').slideUp();
+    recognize(location.hash = 'confirm', 'coming up');
+    return false;
+  });
+</script>

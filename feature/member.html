@@ -13,6 +13,8 @@
 </form>
 
 <script>
+try { history.pushState(member, 'Welcome', '/welcome'); }
+catch (e) { location.hash = 'welcome' }
 // TODO implement as agnostic feature
 recognize(
     // hide policy until authenticated
@@ -23,9 +25,9 @@ $('#member')
   // comandeer submit
   .submit(function(e){
     // if ok, load next
-    var next = $(this).slideUp()
-      .nextAll('form:first').slideDown();
-    recognize(location.hash = next[0].id, 'coming up');
+    $(this).slideUp()
+    $('#policy').slideDown();
+    recognize('policy', 'coming up');
     return false;
   })
   // peripherals

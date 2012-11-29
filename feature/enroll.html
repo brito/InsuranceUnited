@@ -15,7 +15,8 @@
 <script>
 $('#enroll')
   .submit(function(){
-    recognize(location.hash = $('#enroll').slideUp()[0].id, 'coming up');
+    $(this).slideUp();
+    recognize('confirm', 'coming up');
     $.fetch('confirm').insertAfter('#enroll');
     return false;
   });
