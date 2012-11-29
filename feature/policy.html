@@ -101,39 +101,42 @@ try { history.pushState(member, 'Your Policy', '/your-policy'); }
 catch (e) { location.hash = 'your-policy' }
 
 $('#policy')
-.snitch()
-// disable form validation for now
-.attr('novalidate', true)
+	.snitch()
+	// disable form validation for now
+	.attr('novalidate', true)
+	
+	// comandeer submit
+	.submit(function(){
+	  $('#policy').slideUp();
+	  $.fetch('enroll').insertAfter(this);
+	  // TODO promise callback
+	  recognize('enroll', 'coming up');
+	  return false;
+	})
+	
+	// when changing name, update legend
+	.on('keyup', '[name=given_name],[name=family_name]', function(e){
+	  var fieldset = $(this).closest('fieldset');
+	  fieldset.find('legend').text(
+	      $('[name=full_name]', fieldset)
+		      .val([$('[name=given_name]', fieldset).val(), 
+		            $('[name=family_name]', fieldset).val()].join(' '))
+		      .trigger('change')
+		      .val());
+  });
 
-// comandeer submit
-.submit(function(){
-  $('#policy').slideUp();
-  $.fetch('enroll').insertAfter(this);
-  // TODO promise callback
-  recognize('enroll', 'coming up');
-  return false;
-})
-
-.on('change', console.log);
-
-// when changing name, update legend
-$('[name=given_name],[name=family_name]').keyup(function(e){
-  console.debug(e.type, this)
-  $('#owner legend').text($('[name=full_name]')
-      .val([$('[name=given_name]').val(), 
-            $('[name=family_name]').val()].join(' '))
-      .trigger('change')
-      .val())  });
-      
-// adding dependents
-$('#add_a_dependent').click(function(){ 
-  $('#policy [data=insureds]:first').clone()
-    .insertAfter('#policy [data=insureds]:last').hide().slideDown()
-    .find('.when-dependent').show().end()
-    .find('legend').text('a dependent').end();
-});
-// removing dependents
-$('#policy').on('click', '.when-dependent.remove', function(e){
-  $(e.target).closest('[data=insureds]').remove();
-});
+  // adding dependents
+  $('#add_a_dependent').click(
+      function(){
+        $('#policy [data=insureds]:first').clone().hide()
+          .insertAfter('#policy [data=insureds]:last')
+            .find('.when-dependent').show().end()
+            .find('legend').text('a dependent').end()
+            .find('[name]').val('').end()
+          .slideDown();
+      });
+  // removing dependents
+  $('#policy').on('click', '.when-dependent.remove', function(e){
+    $(e.target).closest('[data=insureds]').remove();
+  });
 </script>

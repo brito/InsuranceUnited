@@ -12,7 +12,18 @@ $.fn.snitch = function snitch(){
       }).end()
       
       // ears
-      .find('[data]').on('change', console.warn).end()
+      .find('[data]').on('change', function(){
+        // go up the chain
+        var ears = $(this).closest('[data]').add(this.form).eq(0),
+            drop = ears.attr('data') || ears.attr('action'),
+            payload = $(this).data();
+        console.info(this, 'up the chain', payload, drop, ears)
+        // if news
+        if (ears.data(drop) == 'undefined')
+            ears.data(drop, payload);
+        // else concat
+        else ears.data(drop, [].concat([ears.data(), payload]))
+      }).end()
       
       // snitch
       .find('[name]').each(function(){
@@ -21,8 +32,9 @@ $.fn.snitch = function snitch(){
         // setup event
         $(this).change(function(){ 
           if (!this.readonly) {
-            ears.data(this.name, $(this).val());
-            debug && console.warn(this.name, ears.data()); } });
+            var data = ears.data();
+            ears.data(this.name, data);
+            debug && console.warn(this.name, 'squealed', ears.data()); } });
       }).end();
   });
 };

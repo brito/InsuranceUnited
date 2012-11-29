@@ -15,6 +15,7 @@
 <script>
 try { history.pushState(member, 'Welcome', '/welcome'); }
 catch (e) { location.hash = 'welcome' }
+
 // TODO implement as agnostic feature
 recognize(
     // hide policy until authenticated
@@ -43,24 +44,9 @@ $('#member')
     }, 300));
   })
   // actions
-  .on({ 
-    'set': function(e, rule, matches){
-      if (!matches) return;
-      
-	    if ('is_email' == rule)
-	      $(e.target)
-	        .closest('[data]')
-	          .data('email', matches[0])
-	          .trigger('change');
-	  },
-	  'call': function(e){
-	    console.debug(e.type, arguments);
-	  },
-	  'authenticate': function(){
-			// Stop password maskingâ Jacob Nielsen
-			// http://www.useit.com/alertbox/passwords.html
-			$('[name=password]').showPassword();
-	  }
-});
-
+  .on('authenticate', function(){
+      // Stop password maskingâ Jacob Nielsen
+      // http://www.useit.com/alertbox/passwords.html
+      $('[name=password]').showPassword();
+  });
 </script>

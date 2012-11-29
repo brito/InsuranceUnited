@@ -44,7 +44,7 @@ Now you try
 How-To
 ------
 Technical details on how the parts are built
-[REST-JSON database web service]{http://nullisnull.blogspot.com/}
+* [REST-JSON database web service](http://nullisnull.blogspot.com/)
 
 Changes
 ---------
@@ -71,6 +71,10 @@ To do:
 * Wednesday, November 28
   * "looks like it works"
     * calculate and filter policies
+      * add special data rules on policy fields
+        * update name and legend - ok
+        * add insured to data array when cloning
+        * remove data when removing insured
     * data.onchange: save state
       * restore state
         * from mock
@@ -83,6 +87,7 @@ To do:
     * check that back button works?
     
 * Thursday, November 29
+  * figure out why squeals are not cascading up the chain
   * 1200 can enroll in a plan 
     * register, sign-in and enroll
   * 2100 add [presentation slides](rvl.io)  
