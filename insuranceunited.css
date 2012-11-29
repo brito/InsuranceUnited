@@ -24,7 +24,8 @@ button { font-size:inherit; color:#333; cursor:pointer;
   border: .001em solid rgba(0,0,0,.3); text-shadow:0 1px 0 rgba(255,255,255,.6);
   box-shadow:0 1px 0 rgba(255, 255, 255, 0.6), 0 1px rgba(255, 255, 255, 0.4) inset;
   background:linear-gradient(rgba(255,255,255,0.4), rgba(0,0,0,0.1)) #ccc }
-  button:hover { background-image:linear-gradient(rgba(255,255,255,.7), rgba(0,0,0,.3)) }
+  button:hover { background-image:linear-gradient(rgba(255,255,255,.5), rgba(0,0,0,.2));
+    box-shadow:0 0 3px rgba(0,0,0,.3) }
   button:active { background-image:linear-gradient(rgba(0,0,0,0.2), rgba(255,255,255,0.2)) }
 label { font-variant:small-caps; font-size:90%; font-weight:bold }
 label > * { font-size:110% }
@@ -33,9 +34,9 @@ form { text-align:left }
 fieldset { background:rgba(255,255,255,.1); border:1px solid rgba(0,0,0,.3);
   margin:2em auto; padding:1em }
 legend { padding:.3em 2.6em; background:rgba(255, 255, 255, 0.5); color:#000;
-  box-shadow:1px 1px 3px rgba(0,0,0,.5); text-align:left }
+  box-shadow:1px 1px 3px rgba(0,0,0,.5); text-align:left; border-radius:0 1em }
 
-/*
+/* (debug)
 [data][id] { box-shadow:-0.3ex -1.3ex .3ex rgba(161, 8, 0, 0.33) }
 f[data][id]:target { background:rgba(255,255,255,.2);  }
 [data][id]:before { content:attr(id); display:inline-block }
@@ -60,16 +61,18 @@ form i { display:block; font:inherit; margin:1em }
 .pii, .non-pii,
 [data=address],[data=mailing],[data=income] { float:left; width:50% }
 
-footer { color:#2b81af; padding:1em 3em;
-  border-top:1px solid rgba(0,0,0,.3); font-size:smaller; margin-top:3em }
 
-/* skin */
+/* --- skin.css */
 html, #member, footer { background:#d5e6ef }
 body { font-family:sans-serif }
 body.blue { background:#2b81af; color:white }
 .blue button:not([type]) { background-color:#4192d9; color:#fff;
   text-shadow:0 -1px 1px #000 }
+footer { color:#2b81af; padding:1em 3em;
+  border-top:1px solid rgba(0,0,0,.3); font-size:smaller; margin-top:3em }
 
-/* experience */
+/* --- experience.css */
 [class^=when-]{ display:none }
-.hiding-above { transform:translateY(-100%); overflow:hidden; height:0; z-index:-1 }
+
+/* hide future steps */
+

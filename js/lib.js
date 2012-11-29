@@ -1,7 +1,8 @@
 
-/*! darkgoyle.com/jquery.notify */
-$.fn.notify = function(name){
-  // setup forms only
+/*! darkgoyle.com/jquery.snitch */
+// comandeer submit event and send data changes upstream
+$.fn.snitch = function(){
+  // setup forms in this collection
   this.filter('form').each(function(){
     var form = $(this);
     // switch to xhr submit
@@ -11,7 +12,6 @@ $.fn.notify = function(name){
     });
   });
   
-  /* hoisted for $.fn.notify */
   // fieldset: input, fieldset or form
   function consume(fieldset){
     fieldset.serialize().split('&').forEach(function(pair){

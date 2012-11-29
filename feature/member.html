@@ -13,7 +13,20 @@
 </form>
 
 <script>
+// TODO implement as agnostic feature
+recognize(
+    $('#policy').addClass('when-authenticated').selector,
+    'loaded');
+    
 $('#member')
+  // comandeer submit
+  .submit(function(e){
+    // if ok, load next
+    var next = $(this).slideUp()
+      .nextAll('form:first').slideDown();
+    recognize(location.hash = next[0].id, 'coming up');
+    return false;
+  })
   // peripherals
   .on('keyup', '[name=email]', function(){
     $(this).notify();

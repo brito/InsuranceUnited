@@ -58,14 +58,13 @@ Changes
 * add [json schema](http://brito.github.com/InsuranceUnited/planning/schema.js)
 * add [html semantics](http://brito.github.com/InsuranceUnited/features/policy.html)
 * add [styles](http://brito.github.com/InsuranceUnited/insuranceunited.css)
+* add stepping through (like a form wizard)
 
 To do:
 -----
 * Wednesday, November 28
   * "looks like it works"
-    * stepping through (like a form wizard)
       * show only current section (from location hash)
-      * bind continue (next)
       * check that back button works
     * input.onchange: roll up data to container
     * data.onchange: save state
@@ -78,6 +77,9 @@ To do:
 * add mock.js
 * add tests.js
 * add api.darkgoyle.com/db
+* export jamestron.com/recognize.js
+* export darkgoyle.com/jquery.snitch.js
+* export darkgoyle.com/jquery.fetch.js
 
 * add [custom domain]()
 * all [tests]() pass

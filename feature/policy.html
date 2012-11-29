@@ -99,6 +99,16 @@
 
 <script>
 $('#policy')
+// for now
+.attr('novalidate', true)
+// comandeer submit
+.submit(function(){
+  $('#policy').slideUp();
+  $.fetch('enroll').insertAfter(this);
+  // TODO promise callback
+  recognize(location.hash = 'enroll', 'coming up');
+  return false;
+})
 .on('change', console.log)
 
 // when changing name, update legend

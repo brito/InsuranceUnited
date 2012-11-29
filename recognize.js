@@ -1,10 +1,11 @@
-/**  /*!
- *  jamestron.com
- *  @author @darkgoyle,2012 
+/*! jamestron.com/recognize.js
+ *  @darkgoyle circa 2012
  */
+
 // debug
 debug = !0;
-//darkgoyle.com/recognize
+
+// darkgoyle.com/recognize
 function recognize(something){
   if (debug)
   // output
