@@ -1,8 +1,7 @@
-<script src="plans.json" type="application/json"></script>
 <form id=plans>
-  <p>Based on the information provided, we found the following plans for you.<br>
+  <p class=when-ready>Based on the information provided, we found the following plans for you.<br>
   Please review the available plans and make your selection:
-  <table>
+  <table class=when-ready>
     <caption><h1> Available Plans </h1></caption>
     <thead>
       <th> Plan
@@ -23,25 +22,31 @@
       <td> $premium
   </table>
   
-  <button>Enroll</button>
+  <button class=when-ready>Enroll</button>
 </form>
 
+<!-- mock backup for CORS request below -->
+<script src=js/plans.insuranceunited.js></script>
 <script>
-console.clear();
-$('#plans')
-  .submit(function(){
+// fetch plans from remote db
+$.ajax ({
+    url: 'http://darkgoyle.com/insuranceunited/plans',
+    contentType: 'text/plain',
+    xhrFields: { withCredentials: true }
+  }).always(console.log);
+
+  console.clear();
+  $('#plans .when-ready').removeClass('when-ready');
+  $('#plans').submit(function(){
     $(this).hide();
     recognize('confirm', 'coming up');
     $.fetch('confirm').insertAfter('#plans');
     return false;
   })
-  // TODO fix filter()
+  // finagle plans into table
   .find('[data=plans]')
+  /*/ filter 
   .mangle(function(plans){
-    recognize(plans, 'there are no plans, yo')
-    // get choices
-    // get plans from data (diff between pristine and filtered?)
-    // return filtered plans to data (don't write back or save as view "somewhere")
-  })
-  .interpolate();
+    recognize(plans, 'there are no plans');
+  })*/.interpolate();
 </script>

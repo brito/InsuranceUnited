@@ -50,7 +50,7 @@ $.fn.mangle = function(mangler){
       .removeData().data(
           // apply lambda to data
           $.each(holder.data(), mangler) );
-  })
+  }).end();
 };
 // restore original witness
 $.fn.unmangle = function(){

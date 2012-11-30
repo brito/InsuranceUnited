@@ -78,8 +78,11 @@ To do:
 * Thursday, November 2
 # NOW
   * can request policies using a web service
+    * get plans json via xhr
+      * stuff plans into db
     * filters services dynamically based on user choices
 # TODAY
+  * use reveal.js for flow
   * not having _reload_ is driving me crazy
   * can translate from xml to json and update plans
 # later
@@ -120,7 +123,8 @@ To do:
 
 The future
 ----------
-* add websockets demo
+* add [opensearch](http://www.opensearch.org/Specifications/OpenSearch/1.1#Autodiscovery_in_HTML.2FXHTML)
+* add websockets for realtime data
 * set up automated build and deploy
 * add story translator
   * into unit tests
