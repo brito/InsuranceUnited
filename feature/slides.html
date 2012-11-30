@@ -1,20 +1,52 @@
 <!doctype html>
+<meta charset=utf-8>
+<base href="../">
+
 <title>Insurance United</title>
 <meta content="A presentation by @darkgoyle on web solutions for a fictitious insurance company" 
       name=description>
-
+      
+<link href="insuranceunited.css" rel=stylesheet>
+<link href="js/reveal.min.css" rel=stylesheet>
+<link href="http://www.rvl.io/s/css/theme/quicksand_sky-blue.css" rel=stylesheet>
 <style>
+.slides #header h1 { font:300%/1 Serif; letter-spacing:0 }
 </style>
-
 <body class=reveal>
+
+
   <article class=slides>
-    <section data-markdown><script type=text/template>
-      </script></section>
+    <section id=header><h1>Insurance United</h1>
+      </section>
     
-    <section><header>Business Challenges</header></section>
+    <section>
+      <section><h1>Design</h1>
+        <ul>
+          <li class=fragment>something
+          <li class=fragment>something else
+        </ul>
+      </section>
+      
+      <section>
+        <img src=feature/slides/welcome.png alt="Welcome Screen — Insurance United"></section>
+        
+      <section>
+        <img src=feature/slides/member.png alt="Member Details Form — Insurance United"></section>
+        
+      <section>
+        <img src=feature/slides/household.png alt="Household Details Form — Insurance United"></section>
+        
+      <section>
+        <img src=feature/slides/plans.png alt="Plans — Insurance United"></section>
+        
+      <section>
+        <img src=feature/slides/confirm.png alt="Enrollment Confirmation — Insurance United"></section>
+        
+    </section>
   </article>
+
 
   <script src="js/reveal.min.js"></script>
   <script>
-  Reveal.initialize({ transition:'concave' });
+  Reveal.initialize({ transition:'cube', loop:true });
   </script>

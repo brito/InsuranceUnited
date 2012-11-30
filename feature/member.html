@@ -14,7 +14,7 @@
 
 <script>
 try { history.pushState(member, 'Welcome', '/welcome'); }
-catch (e) { location.hash = 'welcome' }
+catch (e) { location.hash = 'welcome'; document.title = 'Sign in \u2014 Insurance United' }
 
 $('#member')
   .snitch()
