@@ -39,21 +39,21 @@ var all_plans = plans;
 
 // h4x: simulate web service response
 (function(plans, policy){
-  var low_income = 25e3 > policy.annualIncome;
-  
+  var low_income = 25e3 > (policy.annual_income|0),
+      options = [];
   plans.forEach(function(plan, i){
     // filter plans
-    if (plan.lowIncomeOnly != 'false' && !low_income)
-      plans.splice(i,1);
+    if (!low_income || plan.lowIncomeOnly == 'false')
+      options.push(plan);
     // calculate premium
     plan.premium = +plan.adultMonthlyPremium; // owner
     if (policy.smoker)
       plan.premium += smokerSurcharge;
     // TODO for each member calculate and sum
   });
-  console.dir(plans);
+  console.dir(options);
   
-  window.plans = plans;
+  window.plans = options;
 })(all_plans, $('#policy').data());
   
   $('#plans').submit(function(){
