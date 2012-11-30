@@ -71,6 +71,7 @@ Changes
 * data from forms automatically captured!
     * input.onchange: roll up data to container
 * added application message container
+* setup [slides](http://brito.github.com/InsuranceUnited/feature/slides.html)
 
 To do:
 -----

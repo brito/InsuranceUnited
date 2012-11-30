@@ -1,9 +1,11 @@
-/*! (c) 2012 Phiveleven LLC 
+/*! thegrid.js 0.1 2012.11.29
+ * http://jamestron.com/the-grid
+ * All rights reserved
+ * Copyright (c) 2012 Phiveleven LLC 
  * @author darkgoyle@phiveleven.com
- * @license All rights reserved
  */
 console && console.
-  info ('Loading goodies from Phiveleven');
+  info ('Loading The Grid');
 
 /*! phiveleven.com/jquery.Archer */
 // dealer of hash, host, history and storage
