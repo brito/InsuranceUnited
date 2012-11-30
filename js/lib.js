@@ -1,43 +1,65 @@
-// libraries from darkgoyle.com
+/*! (c) 2012 Phiveleven LLC 
+ * @author darkgoyle@phiveleven.com
+ * @license All rights reserved
+ */
+console && console.
+  info ('Loading goodies from Phiveleven');
 
-/*! darkgoyle.com/jquery.mangle */
-// return a filtered data object
+/*! phiveleven.com/jquery.Archer */
+// dealer of hash, host, history and storage
+$.Archer = (function(){return;
+  $(document).on('load', function(){
+    recognize(location.hash, 'Welcome');
+    (location.hash)
+      .replace('',console.warn);
+  });
+})();
+
+/*! phiveleven.com/jquery.stash */
+// storage facade
+$.fn.stash = function(place, thing){
+  //  TODO restore from localStorage, sessionStorage and webStorage
+  // volatile fella
+  var storage = $.Warehouse = {};
+  // keep thing?
+  if (typeof thing != 'undefined')
+    $.Warehouse[place] = thing;
+    
+  // $ if write, thing if read! (like fn.data)
+  return thing? this : $.Warehouse[place]; 
+};
+
+/*! phiveleven.com/jquery.mangle */
+// tamper with [data]
 $.fn.mangle = function(mangler){
-  console.debug('mangle', mangler, this);
-  return this.each(function(){
+  console.debug('mangle: ', this, mangler);
+  // no [data]? do nothing
+  return this.filter('[data]').each(function(){
     // holder of the datas, yo
     var holder = $(this),
         data = holder.data();
-    holder
+    console.log(holder, data)
       // store unmangled as JSON string in [data-src]
-      .attr('data-src', JSON.stringify(holder.data()))
-      // place doppleganger
+    holder.find(':not([data-stash])')
+      // like fn.data but awesomer
+      .stash('data-unmangled', holder.data())
+      .attr('data-stash', true).end()
+      // replace data with mangled doppleganger
       .removeData().data(
-          // apply lambda
-          $.each(
-            // from original data? (what about incremental filters?)
-            $.parseJSON(holder.attr('data-src')) ||
-              // transform from string to object if necessary
-              (function(data){
-                switch (typeof data){
-                case 'string':
-                  // if '/relative/(like a url)':
-                  data = data.replace(/^\/(.)$/,function(url, loc){
-                    // either the parent [data] or the selector at [data-scope]
-                    return (holder.closest('[data]').add($(holder.attr('data-scope'))).eq(0));
-                  });
-                  // resolve 'pointer' to {}
-                  data = ($(holder.attr('data-scope')).data() || window)[data];
-                default:
-                  return data;
-                }
-              })(holder.data() || holder.attr('data')),
-            // lambda
-            mangler));
+          // apply lambda to data
+          $.each(holder.data(), mangler) );
   })
 };
+// restore original witness
+$.fn.unmangle = function(){
+  return this.each(function(){
+    var holder = this;
+    holder.data(holder.stash('data-stash'));
+    return holder;
+  });
+};
 
-/*! darkgoyle.com/jquery.snitch */
+/*! phiveleven.com/jquery.snitch */
 // send data changes upstream
 $.fn.snitch = function snitch(){
   debug && console.warn('setup snitch for', this);
@@ -64,7 +86,7 @@ $.fn.snitch = function snitch(){
       })
       
       // snitch
-      .find('[name]').each(function(){
+      .find('[name]').each(function snitch_setup(){
         var ears = $(this).closest('[data]').add(this.form).eq(0);
         debug && console.debug(this.id || this.name, 'is a mole for', ears);
         // setup event
@@ -79,7 +101,7 @@ $.fn.snitch = function snitch(){
   
 
 
-/*! darkgoyle.com/jquery.fetch */
+/*! phiveleven.com/jquery.fetch */
 $.fetch = function (feature){
   $.fetch.features = $.fetch.features || {};
   $.fetch.pending = $.fetch.pending || {};
@@ -88,6 +110,7 @@ $.fetch = function (feature){
   var url = feature.replace(/^(feature\/)?.+(\.\w+)?$/, function(path,feature,extension){
     return extension || 
       'feature/' + path + '.html';
+    // cache buster?
   }) + '?'+ (+new Date).toString(36),
       promise = $.ajax({ url: url, dataType:'text' })
         .done(resolve)

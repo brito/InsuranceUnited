@@ -16,33 +16,40 @@
 try { history.pushState(member, 'Welcome', '/welcome'); }
 catch (e) { location.hash = 'welcome' }
 
-// TODO implement as agnostic feature
-recognize(
-    // hide policy until authenticated
-    $('#policy').addClass('when-authenticated')
-    .selector, 'loaded');
-    
 $('#member')
   .snitch()
   .submit(function(e){
-    // if ok, load next
+    // TODO validate
+    if (false)
+      return errors(),false;
+    
     $(this).hide()
     $('#policy').show();
-    recognize('policy', 'coming up');
+    // trigger unload
+    recognize(location.hash = 'policy', 'coming up');
     //console.clear();
     return false;
   })
   // peripherals
   .on('keyup', '[name=email]', function(){
-    var input = this;
-    // debounce
+    return; /* not yet setup
+    var input = this,
+        delay = 300; // milliseconds
+    // debounce for slight lookup delay
     clearTimeout($(input).data('debounce'));
-    $(input).data('debounce', setTimeout(function(){
-      var rules = { is_email: /^[^@]+@.+\.[^.]{2,}$/ };
-      for (var rule in rules) (function(matches){
-        $(input).trigger('set', [rule, matches]);
-      })(input.value.match(rules[rule]));
-    }, 300));
+    $(input).data('debounce', setTimeout(
+    // this happens much less frequently (300ms at most)
+	    function(){
+	      var rules = {
+	          // crude email
+	          '^[^@]+@.+\\.[^.]{2,}$': [function(value){
+	            recognize(value, 'email?');
+	          }][0] 
+	      };
+	      
+	      for (var rule in rules) 
+	        $(input).val().replace(new Regexp(rule), rules[rule]);
+	  /* \n... */ // YAML document terminator
   })
   // actions
   .on('authenticate', function(){

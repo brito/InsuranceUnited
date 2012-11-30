@@ -46,6 +46,11 @@ How-To
 Technical details on how the parts are built
 * [REST-JSON database web service](http://nullisnull.blogspot.com/)
 
+Resources
+---------
+* [Most Common Screen Resolutions](http://webguide.fao.org/resource/newsletter/detail/en/c/119531/) Ñ (fao.org)
+* [YAML reference](http://www.yaml.org/refcard.html) Ñ (yaml.org)
+
 Changes
 ---------
 * setup [database xhr API](http://darkgoyle.com/) - need docs
@@ -65,15 +70,34 @@ Changes
 * added cache buster for dynamic content fetch
 * data from forms automatically captured!
     * input.onchange: roll up data to container
+* added application message container
 
 To do:
 -----
-* Thursday, November 29
+* Thursday, November 2
+# NOW
+  * assemble slides
+    * assemble screenies
+      * demo states
+      * mysql workbench
+        * test_db
+          * columns
+          * schema
+      * xhr-handler
+        * authentication
+        * database
+          * config
+          * connect
+          * query
+          * return json
+      * darkgoyle.com/insurance-united/tests HTTP chatter
+# TODAY
+  * not having _reload_ is driving me crazy
   * can request policies using a web service
     * filters services dynamically based on user choices
     * web service call is a REST/JSON http interface to a LAMP stack (linux,apache,php,mysql)
   * can translate from xml to json and update plans
-
+# later
   * figure out why squeals are not cascading up the chain
   * fix animations!
   * fix mobile!

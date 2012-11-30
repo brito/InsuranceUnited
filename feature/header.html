@@ -1,11 +1,17 @@
 <header id=header>
-	<h1>
-	  <a href="/" title=$title id=logo>$title</a>
-	</h1>
+  <i id=messages>
+    (loading&hellip;)</i>
+  
+	<h1><a href="/" title=$title id=logo class=when-ready>
+	 $title</a></h1>
+	 
 </header>
 
 <script>$(function(){
 	$('#header h1').interpolate({
 	  title: 'Insurance United'
+	}, function(){
+	  $('#messages').text('');
+	  $('#logo').removeClass('when-ready');
 	});
 })</script>
