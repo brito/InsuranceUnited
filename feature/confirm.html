@@ -13,6 +13,13 @@
 </form>
 
 <script>
+// h4x
+$('#member').serialize().split('&').forEach(function(pair){
+  pair.replace(/([^=]+)=(.*)/,function(pair, name, value){
+    $('#confirm [name='+name+']').val(unescape(value));
+  });
+});
+$('#confirm [name=number]').val((+new Date).toString(36));
 $('#confirm')
   .submit(function(){
     $('#member').show();
