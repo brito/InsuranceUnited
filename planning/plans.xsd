@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/1/" targetNamespace="http://www.example.org/1/">
+    <element name="allPlans" type="tns:AllPlans"></element>
+
+    <complexType name="AllPlans">
+        <sequence minOccurs="1" maxOccurs="unbounded">
+            <element name="plan">
+                <complexType>
+                    <sequence>
+                        <element name="title" type="string">
+                            <annotation>
+                                <documentation>The Title of the plan.</documentation>
+                            </annotation>
+                        </element>
+                        <element name="provider" type="string">
+                            <annotation>
+                                <documentation>Name of the Health Insurance Provider</documentation>
+                            </annotation></element>
+                        <element name="planType">
+                            <annotation>
+                                <documentation>Type of the plan. One of HMO or PPO</documentation>
+                            </annotation>
+                            <simpleType>
+                                <restriction base="string">
+                                    <enumeration value="HMO"></enumeration>
+                                    <enumeration value="PPO"></enumeration>
+                                </restriction>
+                            </simpleType>
+                        </element>
+                        <element name="qualityRating" type="string">
+                            <annotation>
+                                <documentation>Quality of Service Rating</documentation>
+                            </annotation></element>
+                        <element name="customerServiceRating" type="string">
+                            <annotation>
+                                <documentation>Customer Service Rating</documentation>
+                            </annotation></element>
+                        <element name="adultMonthlyPremium" type="double">
+                            <annotation>
+                                <documentation>Monthly premium for one Adult (18 years or older).</documentation>
+                            </annotation></element>
+                        <element name="minorMonthlyPremium" type="double">
+                            <annotation>
+                                <documentation>Monthly premium for one Minor (youner than 18 years).</documentation>
+                            </annotation></element>
+                        <element name="annualDeductible" type="double">
+                            <annotation>
+                                <documentation>Annual Deductible</documentation>
+                            </annotation></element>
+                        <element name="officeCoPay" type="double">
+                            <annotation>
+                                <documentation>Office Co-Pay</documentation>
+                            </annotation></element>
+                        <element name="smokerSurcharge" type="double">
+                            <annotation>
+                                <documentation>Additional charge for each tobacco user</documentation>
+                            </annotation></element>
+                        <element name="lowIncomeOnly" type="boolean">
+                            <annotation>
+                                <documentation>If true, the plan can only be offered to low income household (annual income of $25,000 or less).</documentation>
+                            </annotation></element>
+                    </sequence>
+                </complexType></element>
+        </sequence>
+    </complexType>
+</schema>

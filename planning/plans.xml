@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:allPlans xmlns:tns="http://www.example.org/1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/1/ plans.xsd ">
+    <plan>
+        <title>ACME Affordable</title>
+        <provider>ACME</provider>
+        <planType>PPO</planType>
+        <qualityRating>A</qualityRating>
+        <customerServiceRating>B</customerServiceRating>
+        <adultMonthlyPremium>50.0</adultMonthlyPremium>
+        <minorMonthlyPremium>25.0</minorMonthlyPremium>
+        <annualDeductible>1500.0</annualDeductible>
+        <officeCoPay>20.0</officeCoPay>
+        <smokerSurcharge>20.0</smokerSurcharge>
+        <lowIncomeOnly>false</lowIncomeOnly>
+    </plan>
+    <plan>
+        <title>BCBS Dependable</title>
+        <provider>BCBS</provider>
+        <planType>PPO</planType>
+        <qualityRating>B</qualityRating>
+        <customerServiceRating>B+</customerServiceRating>
+        <adultMonthlyPremium>100.0</adultMonthlyPremium>
+        <minorMonthlyPremium>50.0</minorMonthlyPremium>
+        <annualDeductible>200.0</annualDeductible>
+        <officeCoPay>20.0</officeCoPay>
+        <smokerSurcharge>30.0</smokerSurcharge>
+        <lowIncomeOnly>false</lowIncomeOnly>
+    </plan>
+    <plan>
+        <title>ACME Low Income</title>
+        <provider>ACME</provider>
+        <planType>HMO</planType>
+        <qualityRating>B-</qualityRating>
+        <customerServiceRating>C+</customerServiceRating>
+        <adultMonthlyPremium>30.0</adultMonthlyPremium>
+        <minorMonthlyPremium>10.0</minorMonthlyPremium>
+        <annualDeductible>500.0</annualDeductible>
+        <officeCoPay>20.0</officeCoPay>
+        <smokerSurcharge>20.0</smokerSurcharge>
+        <lowIncomeOnly>true</lowIncomeOnly>
+    </plan>
+    <plan>
+        <title>Aetna Affordable</title>
+        <provider>Atena</provider>
+        <planType>PPO</planType>
+        <qualityRating>A-</qualityRating>
+        <customerServiceRating>B-</customerServiceRating>
+        <adultMonthlyPremium>50.5</adultMonthlyPremium>
+        <minorMonthlyPremium>25.5</minorMonthlyPremium>
+        <annualDeductible>1550.0</annualDeductible>
+        <officeCoPay>21.0</officeCoPay>
+        <smokerSurcharge>22.0</smokerSurcharge>
+        <lowIncomeOnly>false</lowIncomeOnly>
+    </plan>
+    <plan>
+        <title>Aetna Low Income</title>
+        <provider>Aetna</provider>
+        <planType>HMO</planType>
+        <qualityRating>B-</qualityRating>
+        <customerServiceRating>C+</customerServiceRating>
+        <adultMonthlyPremium>35.0</adultMonthlyPremium>
+        <minorMonthlyPremium>15.0</minorMonthlyPremium>
+        <annualDeductible>550.0</annualDeductible>
+        <officeCoPay>25.0</officeCoPay>
+        <smokerSurcharge>25.0</smokerSurcharge>
+        <lowIncomeOnly>true</lowIncomeOnly>
+    </plan>
+</tns:allPlans>

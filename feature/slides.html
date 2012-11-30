@@ -8,24 +8,38 @@
       
 <link href="insuranceunited.css" rel=stylesheet>
 <link href="js/reveal.min.css" rel=stylesheet>
-<link href="http://www.rvl.io/s/css/theme/quicksand_sky-blue.css" rel=stylesheet>
+<link href="js/reveal.skin.css" rel=stylesheet>
 <style>
 .slides #header h1 { font:300%/1 Serif; letter-spacing:0 }
+.slides h1, .slides h2 { background:rgba(255,255,255,.8) }
+.stack-layer { background:#2b81af; box-shadow:0 0 5px rgba(17,50,255,.3); 
+  padding:1em !important; color:white }
 </style>
 <body class=reveal>
 
 
   <article class=slides>
-    <section id=header><h1>Insurance United</h1>
-      </section>
+    <section id=header><h1>Insurance United</h1></section>
     
     <section>
-      <section><h1>Design</h1>
-        <ul>
-          <li class=fragment>something
-          <li class=fragment>something else
-        </ul>
-      </section>
+      <section style="background:url(feature/slides/flow.png) white">
+        <h1>Want</h1>
+        <h2>(Requirements)</h2></section>
+    </section><section>
+    
+      <section style="background:url(feature/slides/uhc.com.png)">
+        <h1>Have</h1>
+        <h2>(Studies)</h2></section>
+        
+      <section>
+        <img src=feature/slides/uhc.com.png alt="United Healthcare web site"></section>
+      <section>
+        <img src=feature/slides/uhc.com-mobile.png alt="United Healthcare mobile site"></section>
+        
+    </section>
+    
+    <section>
+      <section><h1>Could</h1><h2>(Design)</h2></section>
       
       <section>
         <img src=feature/slides/welcome.png alt="Welcome Screen — Insurance United"></section>
@@ -41,12 +55,39 @@
         
       <section>
         <img src=feature/slides/confirm.png alt="Enrollment Confirmation — Insurance United"></section>
-        
     </section>
+    
+    <section>
+      <section style="background:url(feature/slides/flow.png) white">
+        <h1>Can</h1>
+        <h2>(Implementation)</h2></section>
+        
+      <section>
+        <h2>XML to JSON</h2>
+        <img src=feature/slides/xml-to-json.png alt="Example XML to JSON translation"></section>
+      <section>
+        <h2>YAML to JS</h2>
+        <img src=feature/slides/yml-to-js.png alt="Example YAML and JavaScript schemata"></section>
+      <section>
+        <h2>REST/JSON</h2>
+        <img src=feature/slides/REST-JSON-headers.png alt="Example REST/JSON http request headers"></section>
+      <section>
+        <h1>Stack</h1>
+        <p class="fragment stack-layer">
+          HTML5 + JS + jQuery + CSS3 + plugins</p>
+        <p class="fragment stack-layer">
+          JSON + HTTP + REST </p>
+        <p class="fragment stack-layer">
+          Linux +  Apache + PHP + SQL </p>
+      </section>
+      <section>
+        <h2>REST/JSON PHP + SQL</h2>
+        <img src=feature/slides/REST-JSON-SQL.png alt="Example REST to JSON to SQL and back"></section>
+    </section>
+    
   </article>
 
-
   <script src="js/reveal.min.js"></script>
-  <script>
-  Reveal.initialize({ transition:'cube', loop:true });
-  </script>
+  <script>Reveal.initialize({ transition:'cube', loop:true })</script>
+  <!-- no closing tags. thug life. -->
+  

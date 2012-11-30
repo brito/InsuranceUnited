@@ -71,38 +71,20 @@ Changes
 * data from forms automatically captured!
     * input.onchange: roll up data to container
 * added application message container
-* setup [slides](http://brito.github.com/InsuranceUnited/feature/slides.html)
-* assembled demo design slides
+* assembled [slides](http://brito.github.com/InsuranceUnited/feature/slides.html)
 
 To do:
 -----
 * Thursday, November 2
 # NOW
-  * assemble slides
-    * assemble screenies
-      * demo states
-      * mysql workbench
-        * test_db
-          * columns
-          * schema
-      * xhr-handler
-        * authentication
-        * database
-          * config
-          * connect
-          * query
-          * return json
-      * darkgoyle.com/insurance-united/tests HTTP chatter
-# TODAY
-  * not having _reload_ is driving me crazy
   * can request policies using a web service
     * filters services dynamically based on user choices
-    * web service call is a REST/JSON http interface to a LAMP stack (linux,apache,php,mysql)
+# TODAY
+  * not having _reload_ is driving me crazy
   * can translate from xml to json and update plans
 # later
-  * figure out why squeals are not cascading up the chain
-  * fix animations!
   * fix mobile!
+  * figure out why squeals are not cascading up the chain
   * "looks like it works"
     * calculate and filter policies
       * add special data rules on policy fields
@@ -121,11 +103,15 @@ To do:
     * check that back button works?
 
 * add mock.js
-* add tests.js
 * add api.darkgoyle.com/db
+
 * export jamestron.com/recognize.js
-* export darkgoyle.com/jquery.snitch.js
-* export darkgoyle.com/jquery.fetch.js
+* export phiveleven.com/jquery.Archer.js
+* export phiveleven.com/jquery.stash.js
+* export phiveleven.com/jquery.mangle.js
+* export phiveleven.com/jquery.unmangle.js
+* export phiveleven.com/jquery.snitch.js
+* export phiveleven.com/jquery.fetch.js
 
 * add [custom domain]()
 * all [tests]() pass
@@ -140,6 +126,6 @@ The future
   * into unit tests
 * add css4d
 * add schemata translator
-  * into html
+  * yaml into html5
 * Flying cars
 * Personal robots
