@@ -22,8 +22,8 @@ $('<script>', { src: 'http://code.jquery.com/qunit/qunit-1.10.0.js'})
 // create qunit container
 $($('<section>', { id: 'qunit' }))
   .insertAfter('script:last').hide();
-$(document)
-  .one('keyup',function(e){ if (e.keyCode==27) $('#qunit').show() })
+// this is making the app slow
+//$(document).one('keyup',function(e){ if (e.keyCode==27) $('#qunit').show() })
 
 // TODO define promise interfase for qunit tests not yet loaded
   

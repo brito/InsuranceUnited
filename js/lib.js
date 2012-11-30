@@ -79,7 +79,7 @@ $.fn.snitch = function snitch(){
         var ears = $(this).closest('[data]').add(this.form).eq(0), // [data] bubbles up, [data~=?] jumps
             drop = ears.attr('data') || ears.attr('action'),
             payload = $(this).data();
-        console.info(this, 'up the chain', payload, drop, ears)
+//debug && console.info(this, 'up the chain', payload, drop, ears)
         // if news
         if (ears.data(drop) == 'undefined')
             ears.data(drop, payload);
@@ -96,7 +96,9 @@ $.fn.snitch = function snitch(){
           if (!this.readonly) {
             var data = ears.data();
             ears.data(this.name, data);
-            debug && console.warn(this.name, 'squealed', ears.data()); } });
+//debug && console.warn(this.name, 'squealed', ears.data());
+          }
+        });
       }).end();
   });
 };

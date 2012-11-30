@@ -20,18 +20,18 @@
 	     </select></label>
 	     
 		   <label> Name
-		     <input name=given_name placeholder=First></label>
-		   <label><input name=family_name placeholder=Last></label>
+		     <input name=given_name placeholder=First required></label>
+		   <label><input name=family_name placeholder=Last required></label>
 		   <label><input type=hidden name=full_name></label><br>
 		     
 		   <label>
 		     Social Security Number
-		     <input name=ssn placeholder="XXX-XX-XXXX" pattern="\d{3}-?\d{2}-?\d{4}"></label>
+		     <input name=ssn placeholder="XXX-XX-XXXX" pattern="\d{3}-?\d{2}-?\d{4}" required></label>
     </section>
     
     <section>
       <label> Born
-       <input name=birthdate type=date placeholder="birth date"></label>
+       <input name=birthdate type=date placeholder="birth date" required></label>
        
 	    <label> 
 	      Gender <br>
@@ -69,11 +69,11 @@
         
       <div class=when-different-mailing>
 	      <label> Street and Number
-	        <textarea name=street required rows=2 placeholder="123 Blueberry"></textarea></label><br>
+	        <textarea name=street rows=2 placeholder="123 Blueberry"></textarea></label><br>
 	      <label> City
-	        <input name=city required placeholder="Beverly Hills"></label><br>
+	        <input name=city placeholder="Beverly Hills"></label><br>
 	      <label> Zip Code
-	        <input name=zipcode pattern="\d{5}" required placeholder="90292"></label>
+	        <input name=zipcode pattern="\d{5}" placeholder="90292"></label>
       </div>
      </section>
      
@@ -81,15 +81,8 @@
       Income<br>
       <label> Source
         <input name=source required></label>
-	    <label>Amount
-	      <input name=amount type=number required placeholder=$></label>
-	      
-	    <label> 
-	      Period
-	      <select name=period>
-	        <option value=year> Year
-	        <option value=month> Month
-	      </select></label>
+	    <label>Annual Income
+	      <input name=annual_income type=number required placeholder=$></label>
      </section>
    </fieldset>
    
@@ -101,12 +94,23 @@ try { history.pushState(member, 'Your Policy', '/your-policy'); }
 catch (e) { location.hash = 'your-policy' }
 
 $('#policy')
-	.snitch()
-	// disable form validation for now
+	// .snitch() // not ready, so h4x
+	    
+	// disable form validation for now?
 	.attr('novalidate', true)
 	
 	// comandeer submit
 	.submit(function(){
+		// h4x :'(
+		var data = {};
+		$(this).serialize().split('&').forEach(function(pair){
+      pair.replace(/([^=]+)=(.*)/,function(pair, name, value){
+        data[name] = unescape(value);
+      });
+		});
+		$(this).data(data);
+		
+		// carry on
 	  $('#policy').hide();
 	  $.fetch('plans').insertAfter(this);
 	  // TODO promise callback
@@ -116,13 +120,20 @@ $('#policy')
 	
 	// when changing name, update legend
 	.on('keyup', '[name=given_name],[name=family_name]', function(e){
-	  var fieldset = $(this).closest('fieldset');
-	  fieldset.find('legend').text(
-	      $('[name=full_name]', fieldset)
-		      .val([$('[name=given_name]', fieldset).val(), 
-		            $('[name=family_name]', fieldset).val()].join(' '))
-		      .trigger('change')
-		      .val());
+	  var input = $(this),
+	      delay = 150; // ms
+	  clearTimeout(input.data('debounce'));
+	  input.data('debounce', setTimeout(function(){
+		  var fieldset = input.closest('fieldset'),
+		      full_name = $('[name=full_name]', fieldset),
+		      given_name =$('[name=given_name]', fieldset),
+		      family_name = $('[name=family_name]', fieldset);
+		  fieldset.find('legend').text(
+		      full_name
+			      .val([given_name.val(), family_name.val()].join(' '))
+			      .trigger('change')
+			      .val());
+	  }, delay));
   });
 
   // adding dependents

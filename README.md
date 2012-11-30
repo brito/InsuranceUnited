@@ -50,6 +50,7 @@ Resources
 ---------
 * [Most Common Screen Resolutions](http://webguide.fao.org/resource/newsletter/detail/en/c/119531/) Ñ (fao.org)
 * [YAML reference](http://www.yaml.org/refcard.html) Ñ (yaml.org)
+* [CORS](http://www.html5rocks.com/en/tutorials/cors/) Ñ (html5rocks.com)
 
 Changes
 ---------

@@ -25,18 +25,37 @@
   <button class=when-ready>Enroll</button>
 </form>
 
-<!-- mock backup for CORS request below -->
+<!-- mock for CORS request below -->
 <script src=js/plans.insuranceunited.js></script>
 <script>
-// fetch plans from remote db
-$.ajax ({
-    url: 'http://darkgoyle.com/insuranceunited/plans',
-    contentType: 'text/plain',
-    xhrFields: { withCredentials: true }
-  }).always(console.log);
+// console.clear();
 
-  console.clear();
-  $('#plans .when-ready').removeClass('when-ready');
+// h4x: scope leak
+var all_plans = plans;
+
+// CORS not yet enabled
+//$.get('http://darkgoyle.com/insuranceunited/plans')
+//.always(console.dir);
+
+// h4x: simulate web service response
+(function(plans, policy){
+  var low_income = 25e3 > policy.annualIncome;
+  
+  plans.forEach(function(plan, i){
+    // filter plans
+    if (plan.lowIncomeOnly != 'false' && !low_income)
+      plans.splice(i,1);
+    // calculate premium
+    plan.premium = +plan.adultMonthlyPremium; // owner
+    if (policy.smoker)
+      plan.premium += smokerSurcharge;
+    // TODO for each member calculate and sum
+  });
+  console.dir(plans);
+  
+  window.plans = plans;
+})(all_plans, $('#policy').data());
+  
   $('#plans').submit(function(){
     $(this).hide();
     recognize('confirm', 'coming up');
@@ -48,5 +67,7 @@ $.ajax ({
   /*/ filter 
   .mangle(function(plans){
     recognize(plans, 'there are no plans');
-  })*/.interpolate();
+  })*/.interpolate(window, function(){
+	  $('#plans .when-ready').removeClass('when-ready');
+  });
 </script>
